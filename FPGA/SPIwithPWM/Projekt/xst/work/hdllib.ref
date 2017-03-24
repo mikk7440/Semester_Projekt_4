@@ -1,0 +1,8 @@
+EN onekhz NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd sub00/vhpl00 1490359818
+AR main behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd sub00/vhpl07 1490359825
+EN pwm NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd sub00/vhpl04 1490359822
+EN spi NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd sub00/vhpl02 1490359820
+AR spi behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd sub00/vhpl03 1490359821
+AR onekhz behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd sub00/vhpl01 1490359819
+EN main NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd sub00/vhpl06 1490359824
+AR pwm behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd sub00/vhpl05 1490359823
