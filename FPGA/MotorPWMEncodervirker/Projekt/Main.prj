@@ -1,0 +1,8 @@
+vhdl work "PrescalerPWM.vhd"
+vhdl work "OneKHz.vhd"
+vhdl work "Encoder_filter.vhd"
+vhdl work "SPI.vhd"
+vhdl work "seg7.vhd"
+vhdl work "PWM.vhd"
+vhdl work "Encoder.vhd"
+vhdl work "Main.vhd"

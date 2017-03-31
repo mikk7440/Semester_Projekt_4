@@ -1,0 +1,10 @@
+[Inputs]
+CLK
+SCLK
+MOSI
+SS
+=TX[15:0]=
+[Outputs]
+MISO
+=RX[15:0]=
+[BiDir]
