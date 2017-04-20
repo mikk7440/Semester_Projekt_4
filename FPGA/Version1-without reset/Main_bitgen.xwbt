@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.ncd
+OUTFILE=/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt
+LICENSE=WebPack
+USER_INFO=211301781_0_0_853

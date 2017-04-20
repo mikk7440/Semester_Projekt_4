@@ -1,0 +1,2 @@
+vhdtdtfi -lib work SPI.vhd -prj Projekt -o SPI.spl -module SPI -template /opt/Xilinx/14.7/ISE_DS/ISE//data/splfile.tft -deleteonerror 
+spl2sym -intstyle ise -family spartan3e SPI.spl /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.sym 
