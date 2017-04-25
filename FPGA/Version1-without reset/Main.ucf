@@ -4,8 +4,8 @@ NET "MOSI" 	LOC = "M15";
 NET "MISO" 	LOC = "L17";
 NET "SS"  	LOC = "K12";
 
-NET Hallindex0  LOC = "J16";
 NET Hallindex1  LOC = "F14";
+NET Hallindex2  LOC = "J16";
 NET "Enc1<0>"  LOC = "G13"; #blaa
 NET "Enc1<1>"	LOC = "G16"; #lilla
 NET "Enc2<0>"  LOC = "H16"; #blaa

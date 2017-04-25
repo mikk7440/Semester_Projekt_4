@@ -1,87 +1,111 @@
-V3 43
+V3 55
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd 2017/04/11.11:13:46 P.20131013
-EN work/Encoder 1492615709 \
+EN work/Encoder 1493121489 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/Encoder/Behavioral 1492615710 \
+AR work/Encoder/Behavioral 1493121490 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd \
-      EN work/Encoder 1492615709 CP Encoder_filter
+      EN work/Encoder 1493121489 CP Encoder_filter
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd 2017/03/28.10:09:05 P.20131013
-EN work/Encoder_filter 1492615701 \
+EN work/Encoder_filter 1493121479 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/Encoder_filter/Behavioral 1492615702 \
+AR work/Encoder_filter/Behavioral 1493121480 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd \
-      EN work/Encoder_filter 1492615701
-FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd 2017/04/18.15:45:42 P.20131013
-EN work/Main 1492615719 \
+      EN work/Encoder_filter 1493121479
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd 2017/04/25.09:53:43 P.20131013
+EN work/Main 1493121501 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/Main/Behavioral 1492615720 \
-      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd EN work/Main 1492615719 \
-      CP ProtocolSpi CP MotorController
-FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd 2017/04/18.16:08:54 P.20131013
-EN work/MotorController 1492615717 \
+AR work/Main/Behavioral 1493121502 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd EN work/Main 1493121501 \
+      CP ProtocolSpi CP MotorController CP seg7
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd 2017/04/25.09:53:57 P.20131013
+EN work/MotorController 1493121497 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/MotorController/Behavioral 1492615718 \
+AR work/MotorController/Behavioral 1493121498 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd \
-      EN work/MotorController 1492615717 CP PrescalerTransistor CP PWM CP Encoder \
-      CP seg7
+      EN work/MotorController 1493121497 CP PrescalerTransistor CP PWM CP Encoder \
+      CP Velocity
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd 2017/04/11.10:21:46 P.20131013
-EN work/OneKHz 1492615699 \
+EN work/OneKHz 1493121483 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/OneKHz/Behavioral 1492615700 \
+AR work/OneKHz/Behavioral 1493121484 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd \
-      EN work/OneKHz 1492615699
+      EN work/OneKHz 1493121483
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd 2017/04/11.10:21:52 P.20131013
-EN work/PrescalerPWM 1492615703 \
+EN work/PrescalerPWM 1493121481 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PrescalerPWM/Behavioral 1492615704 \
+AR work/PrescalerPWM/Behavioral 1493121482 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd \
-      EN work/PrescalerPWM 1492615703
+      EN work/PrescalerPWM 1493121481
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerTransistor.vhd 2017/04/18.14:07:10 P.20131013
-EN work/PrescalerTransistor 1492615705 \
+EN work/PrescalerTransistor 1493121485 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerTransistor.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PrescalerTransistor/Behavioral 1492615706 \
+AR work/PrescalerTransistor/Behavioral 1493121486 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerTransistor.vhd \
-      EN work/PrescalerTransistor 1492615705
-FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd 2017/04/19.17:28:15 P.20131013
-EN work/ProtocolSpi 1492615715 \
+      EN work/PrescalerTransistor 1493121485
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd 2017/04/25.09:53:57 P.20131013
+EN work/ProtocolSpi 1493121495 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd \
       PB ieee/std_logic_1164 1381692176
-AR work/ProtocolSpi/Behavioral 1492615716 \
+AR work/ProtocolSpi/Behavioral 1493121496 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd \
-      EN work/ProtocolSpi 1492615715 CP SPI
-FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd 2017/04/18.15:16:17 P.20131013
-EN work/PWM 1492615707 \
+      EN work/ProtocolSpi 1493121495 CP SPI
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd 2017/04/25.10:39:20 P.20131013
+EN work/PWM 1493121487 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/PWM/Behavioral 1492615708 \
-      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd EN work/PWM 1492615707 \
+AR work/PWM/Behavioral 1493121488 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd EN work/PWM 1493121487 \
       CP PrescalerPWM
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/RunningAverage.vhd 2017/04/25.13:45:41 P.20131013
+EN work/RunningAverage 1493121477 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/RunningAverage.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/RunningAverage/Behavioral 1493121478 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/RunningAverage.vhd \
+      EN work/RunningAverage 1493121477
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd 2017/03/31.11:27:55 P.20131013
-EN work/seg7 1492615711 \
+EN work/seg7 1493121499 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/STD_LOGIC_UNSIGNED 1381692179 \
       PB ieee/NUMERIC_STD 1381692181 PB ieee/MATH_REAL 1381692182
-AR work/seg7/Behavioral 1492615712 \
-      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd EN work/seg7 1492615711 \
+AR work/seg7/Behavioral 1493121500 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd EN work/seg7 1493121499 \
       CP OneKHz
 FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd 2017/03/24.13:47:30 P.20131013
-EN work/SPI 1492615713 \
+EN work/SPI 1493121493 \
       FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd \
       PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
       PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
-AR work/SPI/Behavioral 1492615714 \
-      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd EN work/SPI 1492615713
+AR work/SPI/Behavioral 1493121494 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd EN work/SPI 1493121493
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd 2017/04/25.13:57:39 P.20131013
+EN work/Velocity 1493121491 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/Velocity/Behavioral 1493121492 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd \
+      EN work/Velocity 1493121491 CP VelocityCLK CP RunningAverage
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/VelocityCLK.vhd 2017/04/24.16:45:55 P.20131013
+EN work/VelocityCLK 1493121475 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/VelocityCLK.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/VelocityCLK/Behavioral 1493121476 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/VelocityCLK.vhd \
+      EN work/VelocityCLK 1493121475

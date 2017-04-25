@@ -9,11 +9,8 @@ entity MotorController is
 port( 
 -------------Default---------------
 		CLK  		:	IN STD_LOGIC;
+		Reset		: In STD_LOGIC;
 --		Led  		: 	OUT STD_LOGIC_VECTOR(7 downto 0);
---------------End------------------
---------------7Seg-----------------
-		Segm 		: 	OUT STD_LOGIC_VECTOR(7 downto 0);
-		An	  		: 	OUT STD_LOGIC_VECTOR(3 downto 0);
 --------------End------------------
 ------------Controller-------------
 		Enable	:	OUT	STD_LOGIC;
@@ -27,8 +24,10 @@ port(
 ------------Encoder----------------
 		EncoderIn: 	IN STD_LOGIC_VECTOR(1 downto 0);
 		EncoderOut:	OUT STD_LOGIC_VECTOR(13 downto 0);
-		Reset		: In STD_LOGIC
+		VelocityOut  : OUT STD_LOGIC_VECTOR(8 downto 0);
 --------------End------------------
+
+		HallIndex : IN STD_LOGIC
 
 );
 
@@ -36,14 +35,22 @@ port(
 end MotorController;
 
 architecture Behavioral of MotorController is
-signal PastDutyCycle	: STD_LOGIC_VECTOR(7 downto 0);
-signal TempEncouderOut: STD_LOGIC_VECTOR(13 downto 0);
+signal PastDutyCycle	: STD_LOGIC;
 signal CLKTransistor : STD_LOGIC;
-signal CLKShift		: STD_LOGIC_VECTOR(1 downto 0);
 signal Start			: STD_LOGIC;
-signal CLKTranShift	: STD_LOGIC_VECTOR(1 downto 0);
 signal ResetPWM		: STD_LOGIC;
+signal ResetEncoder	: STD_LOGIC;
 signal DutycycleToPWM: STD_LOGIC_VECTOR(7 downto 0);
+signal VelocitySignal: STD_LOGIC_VECTOR(8 downto 0);
+signal TempEncouderOut : STD_LOGIC_VECTOR(13 downto 0);
+
+constant Zero8Bit : STD_LOGIC_VECTOR(7 downto 0) := (others =>'0');
+
+
+
+
+
+
 
 component PrescalerTransistor
     port(
@@ -72,14 +79,18 @@ port (
 		);
 end component;
 
-component seg7
-Port(
-	CLK : in std_logic;
-	number : in STD_LOGIC_VECTOR (13 downto 0);
-	Segm : out  STD_LOGIC_VECTOR (7 downto 0);
-	An :   out  STD_LOGIC_VECTOR (3 downto 0)
-	);
+
+
+component Velocity
+port (
+		CLK 			: IN STD_LOGIC;
+		EncouderIN 	: IN std_logic_vector(13 downto 0);
+		Velocity		: OUT std_logic_vector(8 downto 0)
+		
+		
+);
 end component;
+
 
 begin
 UM1 : PrescalerTransistor PORT MAP(CLK=>CLK,
@@ -96,50 +107,73 @@ UM3	: Encoder PORT MAP(
 						CLK=>CLK,
 						HallSensor=>EncoderIn,
 						EncoderOut=>TempEncouderOut,
-						Reset=>Reset
+						Reset=>ResetEncoder
 						);
 						
-						
-UM4 : seg7 PORT MAP(
+UM4	: Velocity PORT MAP(
 						CLK=>CLK,
-						number=>TempEncouderOut,
-						Segm=>Segm,
-						An=>An
-						);
-EncoderOut <= TempEncouderOut;
+						EncouderIN=>TempEncouderOut,
+						Velocity=>VelocitySignal
+						);						
 
+
+EncoderOut <= TempEncouderOut;
+VelocityOut <= VelocitySignal;
 
 
 
 -------------Motor Process---------------
-process(CLK,CLKShift,PastDutyCycle,DutyCycle,CLKTranShift)
+process(CLK,PastDutyCycle,DutyCycle)
 variable tempstart : std_logic;
 variable tempEnable : std_logic;
 variable OrgiDuty		: STD_LOGIC_VECTOR(7 downto 0);
+variable TurnRAndL	: STD_LOGIC_VECTOR(7 downto 0):= "11010101";
+constant ResetDuty1 : STD_LOGIC_VECTOR(7 downto 0) := "00101101";
+constant ResetDuty2 : STD_LOGIC_VECTOR(7 downto 0) := "11010101";
 begin
 	if rising_edge(CLK) then
-		if ResetPWM = '0' then
-			DutycycleToPWM <= DutyCycle;
-		end if;
-		
-		if ((PastDutyCycle(7) /= DutyCycle(7)) and DutyCycle /= "00000000" )	then
-			tempEnable := '0';
-			tempstart := '1';
-			ResetPWM <= '1';
-			OrgiDuty := DutycycleToPWM;
-			DutycycleToPWM <= (others => '0');
-		end if;
-		
-		if CLKTransistor = '1' then
+		if Reset = '1'  then
+		ResetEncoder <= '0';
+			if HallIndex = '0' then
+					DutycycleToPWM <= (others => '0');
+					ResetEncoder <= '1';
+				else
+					DutycycleToPWM <= TurnRAndL;
+					
+					if VelocitySignal = Zero8Bit then
+						if TurnRAndL = ResetDuty1 then
+							TurnRAndL := ResetDuty2;
+						else
+							TurnRAndL := ResetDuty1;
+						end if;
+					end if;
+			end if;
+			
+		 else
+		 
+			if ResetPWM = '0' then
+				DutycycleToPWM <= DutyCycle;
+			end if;
+			
+			if ((PastDutyCycle /= DutyCycle(7)) and DutyCycle /= "00000000" )	then
+				tempEnable := '0';
+				tempstart := '1';
+				ResetPWM <= '1';
+				OrgiDuty := DutycycleToPWM;
+				DutycycleToPWM <= (others => '0');
+			end if;
+			
+			if CLKTransistor = '1' then
 				tempEnable := '1';
 				tempstart := '0';
 				ResetPWM <= '0';
 				DutycycleToPWM <= OrgiDuty;
+			end if;
+			
+			PastDutyCycle<= DutyCycle(7);
+			Start <= tempstart;
+			Enable <= tempEnable;
 		end if;
-		
-		PastDutyCycle<= DutyCycle;
-		Start <= tempstart;
-		Enable <= tempEnable;
 	end if;
 
 end process;

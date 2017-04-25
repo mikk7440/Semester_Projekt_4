@@ -43,22 +43,24 @@ CounterP: process(CLK, PreCLK)
 constant MinCounter : STD_LOGIC_VECTOR (N-2 downto 0) := (others => '0');
 variable Counter 		: STD_LOGIC_VECTOR (N-2 DOWNTO 0):= (others => '1'); 
 begin
-	if rising_edge(PreCLK) then
-		if Reset = '1' then
-			Counter := (others => '1');
-		else
-		
-			Counter := Counter-1; 
-			if (Counter = DutyCycle(N-2 downto 0) and DutyCycle(N-1) ='0') then
-				PWMRIGHTOUT <= '1';
-			elsif (Counter = DutyCycle(N-2 downto 0) and DutyCycle(N-1) ='1') then
-				PWMLEFTTOUT <= '1';
-			end if;
+	if rising_edge(CLK) then
+		if (PreCLK = '1') then
+			if Reset = '1' then
+				Counter := (others => '1');
+			else
 			
-			if(Counter = MinCounter) then
-				Counter := (others =>'0');
-				PWMRIGHTOUT <= '0';
-				PWMLEFTTOUT <= '0';
+				Counter := Counter-1; 
+				if (Counter = DutyCycle(N-2 downto 0) and DutyCycle(N-1) ='0') then
+					PWMRIGHTOUT <= '1';
+				elsif (Counter = DutyCycle(N-2 downto 0) and DutyCycle(N-1) ='1') then
+					PWMLEFTTOUT <= '1';
+				end if;
+				
+				if(Counter = MinCounter) then
+					Counter := (others =>'0');
+					PWMRIGHTOUT <= '0';
+					PWMLEFTTOUT <= '0';
+				end if;
 			end if;
 		end if;
 	end if;
