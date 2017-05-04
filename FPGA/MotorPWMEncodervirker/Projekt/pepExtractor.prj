@@ -1,0 +1,6 @@
+work	"Encoder.vhd"
+work	"Encoder_filter.vhd"
+work	"Main.vhd"
+work	"OneKHz.vhd"
+work	"PWM.vhd"
+work	"SPI.vhd"

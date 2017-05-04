@@ -1,0 +1,4 @@
+vhdl work "OneKHz.vhd"
+vhdl work "SPI.vhd"
+vhdl work "PWM.vhd"
+vhdl work "Main.vhd"

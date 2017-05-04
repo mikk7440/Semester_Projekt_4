@@ -1,0 +1,10 @@
+[Inputs]
+CLK
+SCLK
+MOSI
+SS
+=Enc[1:0]=
+[Outputs]
+MISO
+=Led[7:0]=
+[BiDir]

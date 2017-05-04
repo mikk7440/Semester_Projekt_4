@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/EncoderBench_isim_beh.exe" -prj "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/EncoderBench_beh.prj" "work.EncoderBench" 

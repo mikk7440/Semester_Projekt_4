@@ -1,0 +1,16 @@
+AR encoder behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd sub00/vhpl09 1490962589
+EN onekhz NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd sub00/vhpl02 1490962578
+AR main behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd sub00/vhpl11 1490962593
+EN pwm NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd sub00/vhpl06 1490962586
+AR seg7 behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd sub00/vhpl13 1490962591
+EN spi NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd sub00/vhpl04 1490962584
+AR spi behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd sub00/vhpl05 1490962585
+AR onekhz behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd sub00/vhpl03 1490962579
+EN main NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd sub00/vhpl10 1490962592
+AR encoder_filter behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd sub00/vhpl01 1490962581
+EN seg7 NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd sub00/vhpl12 1490962590
+EN encoder NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd sub00/vhpl08 1490962588
+AR pwm behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd sub00/vhpl07 1490962587
+EN prescalerpwm NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd sub00/vhpl14 1490962582
+AR prescalerpwm behavioral /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd sub00/vhpl15 1490962583
+EN encoder_filter NULL /home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd sub00/vhpl00 1490962580

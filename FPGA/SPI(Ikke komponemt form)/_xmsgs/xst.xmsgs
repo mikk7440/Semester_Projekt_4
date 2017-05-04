@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="Xst" num="653" delta="new" >Signal &lt;<arg fmt="%s" index="1">TX</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">0000000000000001</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="646" delta="new" >Signal &lt;<arg fmt="%s" index="1">RX&lt;15:8&gt;</arg>&gt; is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">RX_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">SPI</arg>&gt;.
+</msg>
+
+</messages>
+
