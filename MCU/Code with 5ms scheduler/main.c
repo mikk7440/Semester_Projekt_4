@@ -53,7 +53,31 @@ INT8S c;
 INT8U var;
 
 INT8U pwm = 0;
+
+
+//INT8U motor_1_speed;
+//INT8U motor_2_speed;
+//INT8U motor_1_enc;
+//INT8U motor_2_enc;
+
+
 /*****************************   Functions   *******************************/
+
+
+FP64 tToSpeed(INT8U val){
+    INT8U calc_val;
+    if (val == 0)
+    {
+        calc_val = 0;
+    }
+    else
+    {
+        calc_val = 3333.33/val;
+    }
+
+    return calc_val;
+}
+
 
 
 INT16S uartReadChar(void)
@@ -157,7 +181,7 @@ INT16U readSPI(void)
 *   Function : Initializing SSI2 for FreeScale SPI
 ******************************************************************************/
 {
-    INT8U RX_SPI;
+    INT16U RX_SPI;
     while(SSI2_SR_R & (1<<4));       //check if ss is active - active low
     RX_SPI = SSI2_DR_R;
     return RX_SPI;
@@ -179,6 +203,7 @@ void writeSPI(INT16U data)
     SSI2_DR_R = data;
     while( (SSI2_SR_R  & (1<<0)) == 0 ); //wait until tx buffer is empty
     datavar2 = readSPI();
+//    UART_OutUDec(tToSpeed(datavar2));
     UART_OutUDec(datavar2);
 
 
@@ -226,32 +251,130 @@ void writeSPI(INT16U data)
 }
 
 
-INT16U set_speed_motor_1(INT8S speed_val) // speed val is +- 127
+INT16U set_spd_get_cur_motor_1(INT8S speed_val) // speed val is +- 127
 {
     INT16U speed1;
     speed1 = speed_val;
     speed1 &= 0xFF;     // Hvorfor
-    speed1 |= (1<<14); // bit 14 motor 1, bit 13 motor 2
+    speed1 |= (1<<12); // bit 14 motor 1, bit 13 motor 2
     return speed1;
 }
 
-INT16U set_speed_motor_2(INT8S speed_val) // speed val is +- 127
+
+INT16U get_cur_motor_1(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed1;
+    speed1 = speed_val;
+    speed1 &= 0xFF;     // Hvorfor
+    speed1 |= (2<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed1;
+}
+
+INT16U get_spd_motor_1(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed1;
+    speed1 = speed_val;
+    speed1 &= 0xFF;     // Hvorfor
+    speed1 |= (3<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed1;
+}
+
+
+INT16U get_enc_motor_1(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed1;
+    speed1 = speed_val;
+    speed1 &= 0xFF;     // Hvorfor
+    speed1 |= (4<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed1;
+}
+
+
+INT16U set_spd_get_cur_motor_2(INT8S speed_val) // speed val is +- 127
 {
     INT16U speed2;
     speed2 = speed_val;
-    speed2 &= 0xFF;
-    speed2 |= (1<<13); // 14 motor 1, 13 motor 2
+    speed2 &= 0xFF;     // Hvorfor
+    speed2 |= (5<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed2;
+}
+
+INT16U get_cur_motor_2(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed2;
+    speed2 = speed_val;
+    speed2 &= 0xFF;     // Hvorfor
+    speed2 |= (6<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed2;
+}
+
+INT16U get_spd_motor_2(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed2;
+    speed2 = speed_val;
+    speed2 &= 0xFF;     // Hvorfor
+    speed2 |= (7<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed2;
+}
+
+INT16U get_enc_motor_2(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed2;
+    speed2 = speed_val;
+    speed2 &= 0xFF;     // Hvorfor
+    speed2 |= (8<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed2;
+}
+
+INT16U reset_motor_enc(void)
+{
+    INT16U reset = (15<<12);
+ //   uartWriteStr("reset");
+    return reset;
+}
+
+INT16U test(INT8S speed_val) // speed val is +- 127
+{
+    INT16U speed2;
+    speed2 = speed_val;
+    speed2 &= 0xFF;     // Hvorfor
+    speed2 |= (14<<12); // bit 14 motor 1, bit 13 motor 2
     return speed2;
 }
 
 
 
-INT16U reset_motor_enc(void)
-{
-    INT16U reset = (1<<15);
- //   uartWriteStr("reset");
-    return reset;
-}
+
+// Gammel protocol
+
+//INT16U set_speed_motor_1(INT8S speed_val) // speed val is +- 127
+//{
+//    INT16U speed1;
+//    speed1 = speed_val;
+//    speed1 &= 0xFF;     // Hvorfor
+//    speed1 |= (1<<14); // bit 14 motor 1, bit 13 motor 2
+//    return speed1;
+//}
+//
+//INT16U set_speed_motor_2(INT8S speed_val) // speed val is +- 127
+//{
+//    INT16U speed2;
+//    speed2 = speed_val;
+//    speed2 &= 0xFF;
+//    speed2 |= (1<<13); // 14 motor 1, 13 motor 2
+//    return speed2;
+//}
+//
+//
+//
+//INT16U reset_motor_enc(void)
+//{
+//    INT16U reset = (1<<15);
+// //   uartWriteStr("reset");
+//    return reset;
+//}
+
+
 
 
 
@@ -265,11 +388,6 @@ INT8U duty_to_pwm(INT8U number)
 }
 
 
-
-
-
-
-
 INT32U sw1(INT8U event)
 {
 
@@ -279,14 +397,15 @@ INT32U sw1(INT8U event)
             uartWriteStr("STOP!");
             uartWriteChar('\n');
             uartWriteChar('\r');
-            writeSPI(set_speed_motor_1(0));
-            writeSPI(set_speed_motor_2(0));
+            writeSPI(set_spd_get_cur_motor_1(0));
+            writeSPI(set_spd_get_cur_motor_2(0));
             break;
         case BE_DOUBBLE_PUSH:
             uartWriteStr("Double push");
             uartWriteChar('\n');
             uartWriteChar('\r');
-            writeSPI(set_speed_motor_1(-30));
+            writeSPI(test(30));
+//            writeSPI(set_spd_get_cur_motor_1(-30));
             break;
         case BE_LONG_PUSH:
             writeSPI(reset_motor_enc());
@@ -301,74 +420,142 @@ INT32U sw1(INT8U event)
 }
 
 
-INT32U sw2(INT8U event)
-{
-    switch( event )
-    {
-        case BE_SINGLE_PUSH2:
-            writeSPI(set_speed_motor_1(-30));
- //           writeSPI(reset_motor_enc());
-        //    uartWriteStr("reset");
-            break;
-        case BE_DOUBBLE_PUSH2:
-            writeSPI(set_speed_motor_1(30));
-            break;
-        case BE_LONG_PUSH2:
-            writeSPI(set_speed_motor_2(30));
-            break;
-        default:
-            break;
-    }
-    return RX_SPI;
-}
+//INT32U sw2(INT8U event)
+//{
+//    switch( event )
+//    {
+//        case BE_SINGLE_PUSH2:
+//            writeSPI(set_speed_motor_1(-30));
+// //           writeSPI(reset_motor_enc());
+//        //    uartWriteStr("reset");
+//            break;
+//        case BE_DOUBBLE_PUSH2:
+//            writeSPI(set_speed_motor_1(30));
+//            break;
+//        case BE_LONG_PUSH2:
+//            writeSPI(set_speed_motor_2(30));
+//            break;
+//        default:
+//            break;
+//    }
+//    return RX_SPI;
+//}
+
+
+
 
 
 
 
 //reg
-INT8S goTo(INT8U enc, INT8U destination) //distnation is enc val not degrees
+
+INT8S goTo(INT16U enc, INT16U destination, INT8U hastighed) //distnation is enc val not degrees
 {
-    static FP32 lastError = 0;
-    static FP32 error = 0;
-    static FP32 iterationTime = 0.005;
-    static FP32 integral = 0;
-    static FP32 derivative = 0;
-    static FP32 kP = 0.5;
-    static FP32 kI = 10;
-    static FP32 kD = 0.125;
-    static INT16S output = 0;
+    static FP32 last_error_pos = 0;
+    static FP32 error_pos = 0;
+    FP32 iteration_time_pos = 0.005*5;
+    static FP32 integral_pos = 0;
+    static FP32 derivative_pos = 0;
+    FP32 kP_pos = 1;
+    FP32 kI_pos = 1;
+    FP32 kD_pos = 0;
+    static INT16S output_pos = 0;
+    static INT16U enc_last = 0;
+    INT8S direction = 0;
 
+    static FP32 error_hastighed = 0;
+    FP32 kP_hastighed = 1;
+    INT16U output_hastighed = 0;
 
-    error = destination - enc;
-    integral = integral + (error * iterationTime);
-    derivative = (error - lastError)/iterationTime;
-    lastError = error;
+    static INT8U iteration_counter = 5;
 
-    output = (kP * error + kI * integral + kD * derivative);
+    if(enc <= enc_last)
+        direction = 1;
+    else
+        direction = -1;
 
-
-    if ( error == 0)
+    if(iteration_counter == 5)
     {
-        integral = 0;
+        error_pos = destination - enc;
+        integral_pos = integral_pos + (error_pos * iteration_time_pos);
+        derivative_pos = (error_pos - last_error_pos)/iteration_time_pos;
+        last_error_pos = error_pos;
+
+        output_pos = (kP_pos * error_pos + kI_pos * integral_pos + kD_pos * derivative_pos);
+
+        if ( error_pos == 0)
+        {
+            integral_pos = 0;
+        }
+
+        if (output_pos > 200)
+        {
+            output_pos = 200;
+        }
+        else if (output_pos < -200)
+        {
+            output_pos = -200;
+        }
+        iteration_counter=0;
     }
 
-    if (output > 127)
-    {
-        output = 127;
-    }
-    else if (output < -127)
-    {
-        output = -127;
-    }
+    error_hastighed = output_pos - hastighed * direction;
+    output_hastighed = error_hastighed * kP_hastighed;
+    iteration_counter++;
+    enc_last = enc;
+        if (output_hastighed > 127)
+        {
+            output_hastighed = 127;
+        }
+        else if (output_hastighed < -127)
+        {
+            output_hastighed = -127;
+        }
 
-
-
-
-    return output;
+    return output_hastighed;
 }
 
-
-
+//
+//INT8S goTo(INT8U enc, INT8U destination) //distnation is enc val not degrees
+//{
+//    static FP32 lastError = 0;
+//    static FP32 error = 0;
+//    static FP32 iterationTime = 0.005;
+//    static FP32 integral = 0;
+//    static FP32 derivative = 0;
+//    static FP32 kP = 0.5;
+//    static FP32 kI = 10;
+//    static FP32 kD = 0.125;
+//    static INT16S output = 0;
+//
+//
+//    error = destination - enc;
+//    integral = integral + (error * iterationTime);
+//    derivative = (error - lastError)/iterationTime;
+//    lastError = error;
+//
+//    output = (kP * error + kI * integral + kD * derivative);
+//
+//
+//    if ( error == 0)
+//    {
+//        integral = 0;
+//    }
+//
+//    if (output > 127)
+//    {
+//        output = 127;
+//    }
+//    else if (output < -127)
+//    {
+//        output = -127;
+//    }
+//
+//
+//
+//
+//    return output;
+//}
 
 
 int main(void)
@@ -444,17 +631,27 @@ int main(void)
 
 */
 
-	static INT8U enc = 0;
-	static INT8U destination = 100; // 180 enc ticks
+	static INT16U enc = 0;
+	static INT8U speed = 0;
+	static INT16U destination = 1020; // 180 enc ticks
 
+	static INT8U speed2;
 
 	switch(c)
 	{
 	    //REG test
 	    case 'm':
 
-	    writeSPI( set_speed_motor_1( goTo (  enc,  destination  ) ) );
-	    enc = SSI2_DR_R;
+        writeSPI( get_spd_motor_1(0));
+        speed2 = SSI2_DR_R;
+        speed = tToSpeed(speed2);
+        writeSPI( get_enc_motor_1(0));
+        enc = SSI2_DR_R;
+        uartWriteChar(9);       // Tab
+        void UART_OutUDec(speed);
+        uartWriteChar('\n');
+        uartWriteChar('\r');
+	    writeSPI( set_spd_get_cur_motor_1( goTo (  enc,  destination, speed  ) ) );
 
 	            break;
 	    //Reset
@@ -464,100 +661,100 @@ int main(void)
 	        break;
 	    //Stop motor 3
 	    case ',':
-            writeSPI(set_speed_motor_1(0));
+            writeSPI(set_spd_get_cur_motor_1(0));
             RX = 0;
             break;
         //Stop motor 2
         case '.':
-            writeSPI(set_speed_motor_2(0));
+            writeSPI(set_spd_get_cur_motor_2(0));
             RX = 0;
             break;
 	    //Motor2 speed
 	    case 'a':
-            writeSPI(set_speed_motor_2(-15));
+            writeSPI(set_spd_get_cur_motor_2(-15));
             RX = 1;
             break;
         case 's':
-            writeSPI(set_speed_motor_2(-30));
+            writeSPI(set_spd_get_cur_motor_2(-30));
             RX = 2;
             break;
         case 'd':
-            writeSPI(set_speed_motor_2(-45));
+            writeSPI(set_spd_get_cur_motor_2(-45));
             RX = 3;
             break;
         case 'f':
-            writeSPI(set_speed_motor_2(-60));
+            writeSPI(set_spd_get_cur_motor_2(-60));
             RX = 4;
             break;
         case 'z':
-            writeSPI(set_speed_motor_2(15));
+            writeSPI(set_spd_get_cur_motor_2(15));
             RX = 1;
             break;
         case 'x':
-            writeSPI(set_speed_motor_2(30));
+            writeSPI(set_spd_get_cur_motor_2(30));
             RX = 2;
             break;
         case 'c':
-            writeSPI(set_speed_motor_2(45));
+            writeSPI(set_spd_get_cur_motor_2(45));
             RX = 3;
             break;
         case 'v':
-            writeSPI(set_speed_motor_2(60));
+            writeSPI(set_spd_get_cur_motor_2(60));
             RX = 4;
             break;
         //Motor1 speed
         case 'q':
-            writeSPI(set_speed_motor_1(-15));
+            writeSPI(set_spd_get_cur_motor_1(-15));
             RX = 1;
             break;
         case 'w':
-            writeSPI(set_speed_motor_1(-30));
+            writeSPI(set_spd_get_cur_motor_1(-30));
             RX = 2;
             break;
         case 'e':
-            writeSPI(set_speed_motor_1(-45));
+            writeSPI(set_spd_get_cur_motor_1(-45));
             RX = 3;
             break;
         case 'r':
-            writeSPI(set_speed_motor_1(-60));
+            writeSPI(set_spd_get_cur_motor_1(-60));
             RX = 4;
             break;
         case 't':
-            writeSPI(set_speed_motor_1(-75));
+            writeSPI(set_spd_get_cur_motor_1(-75));
             RX = 5;
             break;
         case 'y':
-            writeSPI(set_speed_motor_1(-90));
+            writeSPI(set_spd_get_cur_motor_1(-90));
             RX = 6;
             break;
         case 'u':
-            writeSPI(set_speed_motor_1(-105));
+            writeSPI(set_spd_get_cur_motor_1(-105));
             RX = 7;
             break;
         case 'i':
-            writeSPI(set_speed_motor_1(-120));
+            writeSPI(set_spd_get_cur_motor_1(-120));
             RX = 1;
             break;
         case 'o':
-            writeSPI(set_speed_motor_1(-127));
+            writeSPI(set_spd_get_cur_motor_1(-127));
             RX = 2;
             break;
 
 
         case '1':
-	        writeSPI(set_speed_motor_1(15));
+	        writeSPI(set_spd_get_cur_motor_1(15));
 	        RX = 1;
 	        break;
 	    case '2':
-	        writeSPI(set_speed_motor_1(30));
+	        writeSPI(set_spd_get_cur_motor_1(30));
             RX = 2;
             break;
 	    case '3':
-	        writeSPI(set_speed_motor_1(45));
+	        writeSPI(set_spd_get_cur_motor_1(45));
             RX = 3;
             break;
 	    case '4':
-	        writeSPI(set_speed_motor_1(60));
+	        writeSPI(set_spd_get_cur_motor_1(60));
 	        RX = 4;
 	        break;
 
@@ -581,23 +778,23 @@ int main(void)
 */
 
         case '5':
-	        writeSPI(set_speed_motor_1(75));
+	        writeSPI(set_spd_get_cur_motor_1(75));
             RX = 5;
             break;
         case '6':
-            writeSPI(set_speed_motor_1(90));
+            writeSPI(set_spd_get_cur_motor_1(90));
             RX = 6;
             break;
         case '7':
-            writeSPI(set_speed_motor_1(105));
+            writeSPI(set_spd_get_cur_motor_1(105));
             RX = 7;
             break;
         case '8':
-            writeSPI(set_speed_motor_1(120));
+            writeSPI(set_spd_get_cur_motor_1(120));
             RX = 1;
             break;
         case '9':
-            writeSPI(set_speed_motor_1(127));
+            writeSPI(set_spd_get_cur_motor_1(127));
             RX = 2;
             break;
         default:
