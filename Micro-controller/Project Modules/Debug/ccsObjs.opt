@@ -1,0 +1,1 @@
+"./LEDS.o" "./button.o" "./gpio.o" "./main.o" "./messages.o" "./queue.o" "./rtcs.o" "./sem.o" "./spi.o" "./swtimers.o" "./timer0A.o" "./tm4c123gh6pm_startup_ccs_gcc.o" "./uart.o" -Wl,-T"../tm4c123gh6pm.lds" -Wl,--start-group -lc -Wl,--end-group 
