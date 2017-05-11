@@ -64,16 +64,38 @@ INT8U pwm = 0;
 /*****************************   Functions   *******************************/
 
 
-FP64 tToSpeed(INT8U val){
-    INT8U calc_val;
+FP64 tToSpeed(INT16U val)
+{
+    INT16U calc_val;
+    static INT16U avg1 = 0;
+    static INT16U avg2 = 0;
+    static INT16U avg3 = 0;
+    static INT16U avg4 = 0;
+    static INT16U avg5 = 0;
+    static INT16U avg6 = 0;
+//    static INT16U avg7 = 0;
+//    static INT16U avg8 = 0;
+//    static INT16U avg9 = 0;
+//    static INT16U avg10 = 0;
+//    static INT16U avg11 = 0;
+//    static INT16U avg12 = 0;
     if (val == 0)
     {
         calc_val = 0;
     }
     else
     {
-        calc_val = 3333.33/val;
+        calc_val = 33333.33/val;
     }
+    avg6 = avg5;
+    avg5 = avg4;
+    avg4 = avg3;
+    avg3 = avg2;
+    avg2=avg1;
+    avg1=calc_val;
+    calc_val = (avg1+avg2+avg3+avg4+avg5+avg6)/6;
+
+
 
     return calc_val;
 }
@@ -202,33 +224,28 @@ void writeSPI(INT16U data)
     datavar = data;
     SSI2_DR_R = data;
     while( (SSI2_SR_R  & (1<<0)) == 0 ); //wait until tx buffer is empty
-    datavar2 = readSPI();
+
+    datavar2 = readSPI();   // fjern under reg
 //    UART_OutUDec(tToSpeed(datavar2));
-    UART_OutUDec(datavar2);
 
 
-   /*
-    if(datavar2 & (1 << 7))
-    {
-        datavar2 = datavar2 - 1;
-        datavar ^= 0xFF;
-        uartWriteChar('-');
-        UART_OutUDec(datavar2);
-    }
-*/
+    UART_OutUDec(datavar2); // fjern under reg
 
     uartWriteChar(9);       // Tab
 
-    /*
-    //Write uart tx
-    if(datavar & (1 << 15))
-    {
-        uartWriteStr("reset");
-    }
-    else
-    {
-        */
-        //UART TX negative or positive
+    SSI2_DR_R = (3<<12) | 100;    // ask for speed
+    UART_OutUDec(tToSpeed(readSPI()));
+
+//                uartWriteChar('\n');    //for sampling
+//                uartWriteChar('\r');
+
+
+    uartWriteChar(9);       // Tab
+
+
+
+
+ //       UART TX negative or positive;
         if(datavar & (1 << 7))
         {
             datavar &= 0xFF;
@@ -246,7 +263,7 @@ void writeSPI(INT16U data)
             uartWriteChar('\n');
             uartWriteChar('\r');
         }
-//}
+
 
 }
 
@@ -335,11 +352,11 @@ INT16U reset_motor_enc(void)
 
 INT16U test(INT8S speed_val) // speed val is +- 127
 {
-    INT16U speed2;
-    speed2 = speed_val;
-    speed2 &= 0xFF;     // Hvorfor
-    speed2 |= (14<<12); // bit 14 motor 1, bit 13 motor 2
-    return speed2;
+    INT16U speed;
+    speed = speed_val;
+    speed &= 0xFF;     // Hvorfor
+    speed |= (13<<12); // bit 14 motor 1, bit 13 motor 2
+    return speed;
 }
 
 
@@ -380,12 +397,7 @@ INT16U test(INT8S speed_val) // speed val is +- 127
 
 
 
-INT8U duty_to_pwm(INT8U number)
-{
-    FP32 duty;
-    duty = (number/100)*127;
-    return duty;
-}
+
 
 
 INT32U sw1(INT8U event)
@@ -397,6 +409,7 @@ INT32U sw1(INT8U event)
             uartWriteStr("STOP!");
             uartWriteChar('\n');
             uartWriteChar('\r');
+//            writeSPI(get_enc_motor_1(30));
             writeSPI(set_spd_get_cur_motor_1(0));
             writeSPI(set_spd_get_cur_motor_2(0));
             break;
@@ -404,7 +417,8 @@ INT32U sw1(INT8U event)
             uartWriteStr("Double push");
             uartWriteChar('\n');
             uartWriteChar('\r');
-            writeSPI(test(30));
+            writeSPI(get_spd_motor_1(30));
+//            writeSPI(test(30));
 //            writeSPI(set_spd_get_cur_motor_1(-30));
             break;
         case BE_LONG_PUSH:
@@ -449,33 +463,33 @@ INT32U sw1(INT8U event)
 
 //reg
 
-INT8S goTo(INT16U enc, INT16U destination, INT8U hastighed) //distnation is enc val not degrees
+INT8S goTo(INT16U enc, INT16U destination, INT16U hastighed) //distnation is enc val not degrees
 {
     static FP32 last_error_pos = 0;
     static FP32 error_pos = 0;
-    FP32 iteration_time_pos = 0.005*5;
+    FP32 iteration_time_pos = 0.005;
     static FP32 integral_pos = 0;
     static FP32 derivative_pos = 0;
     FP32 kP_pos = 1;
-    FP32 kI_pos = 1;
+    FP32 kI_pos = 0;
     FP32 kD_pos = 0;
     static INT16S output_pos = 0;
     static INT16U enc_last = 0;
     INT8S direction = 0;
 
     static FP32 error_hastighed = 0;
-    FP32 kP_hastighed = 1;
-    INT16U output_hastighed = 0;
+    FP32 kP_hastighed = 0.5;
+    INT16S output_hastighed = 0;
 
     static INT8U iteration_counter = 5;
 
-    if(enc <= enc_last)
+    if(enc >= enc_last)
         direction = 1;
     else
         direction = -1;
 
-    if(iteration_counter == 5)
-    {
+//    if(iteration_counter == 5)
+//      {
         error_pos = destination - enc;
         integral_pos = integral_pos + (error_pos * iteration_time_pos);
         derivative_pos = (error_pos - last_error_pos)/iteration_time_pos;
@@ -488,20 +502,20 @@ INT8S goTo(INT16U enc, INT16U destination, INT8U hastighed) //distnation is enc 
             integral_pos = 0;
         }
 
-        if (output_pos > 200)
+        if (output_pos > 127)
         {
-            output_pos = 200;
+            output_pos = 127;
         }
-        else if (output_pos < -200)
+        else if (output_pos < -127)
         {
-            output_pos = -200;
+            output_pos = -127;
         }
-        iteration_counter=0;
-    }
+      //  iteration_counter=0;
+//      }
 
     error_hastighed = output_pos - hastighed * direction;
     output_hastighed = error_hastighed * kP_hastighed;
-    iteration_counter++;
+    //iteration_counter++;
     enc_last = enc;
         if (output_hastighed > 127)
         {
@@ -512,7 +526,7 @@ INT8S goTo(INT16U enc, INT16U destination, INT8U hastighed) //distnation is enc 
             output_hastighed = -127;
         }
 
-    return output_hastighed;
+    return output_pos;
 }
 
 //
@@ -558,6 +572,14 @@ INT8S goTo(INT16U enc, INT16U destination, INT8U hastighed) //distnation is enc 
 //}
 
 
+void clr_rx_spi()
+{
+    INT16U dummy;
+    while(SSI2_SR_R & (1<<3))
+    {
+        dummy = readSPI();
+    }
+}
 int main(void)
 /*****************************************************************************
 *   Input    :
@@ -632,26 +654,38 @@ int main(void)
 */
 
 	static INT16U enc = 0;
-	static INT8U speed = 0;
+	static INT16U speed = 0;
 	static INT16U destination = 1020; // 180 enc ticks
 
-	static INT8U speed2;
+	static INT16U speed2;
+
+	static INT16U var;
 
 	switch(c)
 	{
 	    //REG test
 	    case 'm':
 
-        writeSPI( get_spd_motor_1(0));
-        speed2 = SSI2_DR_R;
+	      clr_rx_spi();
+        writeSPI( get_spd_motor_1(30));
+        speed2 = readSPI();
         speed = tToSpeed(speed2);
-        writeSPI( get_enc_motor_1(0));
-        enc = SSI2_DR_R;
+
+        UART_OutUDec(speed);
         uartWriteChar(9);       // Tab
-        void UART_OutUDec(speed);
+
+        clr_rx_spi();
+        writeSPI( get_enc_motor_1(0));
+        enc = readSPI();
+        UART_OutUDec(enc);
+
         uartWriteChar('\n');
         uartWriteChar('\r');
-	    writeSPI( set_spd_get_cur_motor_1( goTo (  enc,  destination, speed  ) ) );
+
+        INT16U test = set_spd_get_cur_motor_1(30);
+//        INT16U test = set_spd_get_cur_motor_1( goTo (  enc,  destination, speed  ) );
+        writeSPI( test );
+        var = readSPI();
 
 	            break;
 	    //Reset
