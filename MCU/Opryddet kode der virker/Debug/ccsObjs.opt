@@ -1,0 +1,1 @@
+"./UI.o" "./button.o" "./button2.o" "./counter.o" "./countled.o" "./gpio.o" "./main.o" "./protokol.o" "./regulering.o" "./spi.o" "./systick.o" "./tm4c123gh6pm_startup_ccs_gcc.o" "./uart.o" -Wl,-T"../tm4c123gh6pm.lds" 
