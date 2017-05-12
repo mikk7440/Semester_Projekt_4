@@ -33,8 +33,8 @@ void UI_(INT8U c)
 {
     static INT16U enc = 0;
       static INT16U speed = 0;
-      static INT16U destination = 1020; // 180 enc ticks
-
+      static INT16U destination = 1000; // 180 enc ticks
+      static INT8U hej = 0;
       static INT16U speed2;
 
       static INT16U var;
@@ -43,15 +43,33 @@ switch(c)
   {
       //REG test
       case 'm':
-//      clr_rx_spi();
-//      writeSPI(get_enc_motor_1());
-//      enc = readSPI();
-      clr_rx_spi();
-      writeSPI(get_spd_motor_1() | 3);
-      speed = tToSpeed(readSPI());
-      writeSPI(set_spd_get_cur_motor_1(goTo(900-1,destination,0)));
 
-      break;
+    if (hej == 0) {
+        clr_rx_spi();
+        writeSPI(get_enc_motor_1());
+        enc = readSPI();
+        clr_rx_spi();
+        writeSPI(get_spd_motor_1() | 3);
+        speed = tToSpeed(readSPI());
+        writeSPI(set_spd_get_cur_motor_1(goTo(enc,destination,speed)));
+        hej = 1;
+        break;
+    }
+
+//      case 'n':
+
+    if (hej == 1) {
+        clr_rx_spi();
+        writeSPI(get_enc_motor_2());
+        enc = readSPI();
+        clr_rx_spi();
+        writeSPI(get_spd_motor_2());
+        speed = tToSpeed(readSPI());
+        writeSPI(set_spd_get_cur_motor_2(goTo2(enc,destination,speed)));
+        hej = 0;
+        break;
+    }
+
       //Reset
       case 'l':
           writeSPI(reset_motor_enc());

@@ -28,10 +28,8 @@ c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-
 Allocating common symbols
 Common symbol       size              file
 
-dummy1              0x1               ./regulering.o
 c                   0x1               ./main.o
 RX_SPI              0x4               ./main.o
-dummy2              0x2               ./regulering.o
 TX_SPI              0x4               ./main.o
 var                 0x1               ./main.o
 
@@ -71,7 +69,7 @@ LOAD ./uart.o
 .vtable
  *(.vtable)
 
-.text           0x00000270     0x1da0
+.text           0x00000270     0x20dc
  CREATE_OBJECT_SYMBOLS
  *(.text)
  .text          0x00000270        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
@@ -128,218 +126,221 @@ LOAD ./uart.o
  .text          0x00000b14        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtend.o
  .text          0x00000b14        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
  *(.text.*)
- .text.UI_      0x00000b14      0x3a0 ./UI.o
+ .text.UI_      0x00000b14      0x45c ./UI.o
                 0x00000b14                UI_
- .text.sw1      0x00000eb4       0x90 ./UI.o
-                0x00000eb4                sw1
+ .text.sw1      0x00000f70       0x90 ./UI.o
+                0x00000f70                sw1
  .text.button_pushed
-                0x00000f44       0x24 ./button.o
-                0x00000f44                button_pushed
+                0x00001000       0x24 ./button.o
+                0x00001000                button_pushed
  .text.select_button
-                0x00000f68      0x120 ./button.o
-                0x00000f68                select_button
+                0x00001024      0x120 ./button.o
+                0x00001024                select_button
  .text.button_pushed_sw2
-                0x00001088       0x24 ./button2.o
-                0x00001088                button_pushed_sw2
+                0x00001144       0x24 ./button2.o
+                0x00001144                button_pushed_sw2
  .text.select_button2
-                0x000010ac      0x120 ./button2.o
-                0x000010ac                select_button2
- .text.counter  0x000011cc      0x124 ./counter.o
-                0x000011cc                counter
+                0x00001168      0x120 ./button2.o
+                0x00001168                select_button2
+ .text.counter  0x00001288      0x124 ./counter.o
+                0x00001288                counter
  .text.counter_leds
-                0x000012f0       0x84 ./countled.o
-                0x000012f0                counter_leds
+                0x000013ac       0x84 ./countled.o
+                0x000013ac                counter_leds
  .text.init_gpio
-                0x00001374       0x54 ./gpio.o
-                0x00001374                init_gpio
- .text.main     0x000013c8       0x9c ./main.o
-                0x000013c8                main
+                0x00001430       0x54 ./gpio.o
+                0x00001430                init_gpio
+ .text.main     0x00001484       0x9c ./main.o
+                0x00001484                main
  .text.set_spd_get_cur_motor_1
-                0x00001464       0x2c ./protokol.o
-                0x00001464                set_spd_get_cur_motor_1
+                0x00001520       0x2c ./protokol.o
+                0x00001520                set_spd_get_cur_motor_1
  .text.get_cur_motor_1
-                0x00001490       0x20 ./protokol.o
-                0x00001490                get_cur_motor_1
+                0x0000154c       0x20 ./protokol.o
+                0x0000154c                get_cur_motor_1
  .text.get_spd_motor_1
-                0x000014b0       0x1c ./protokol.o
-                0x000014b0                get_spd_motor_1
+                0x0000156c       0x1c ./protokol.o
+                0x0000156c                get_spd_motor_1
  .text.get_enc_motor_1
-                0x000014cc       0x1c ./protokol.o
-                0x000014cc                get_enc_motor_1
+                0x00001588       0x1c ./protokol.o
+                0x00001588                get_enc_motor_1
  .text.set_spd_get_cur_motor_2
-                0x000014e8       0x2c ./protokol.o
-                0x000014e8                set_spd_get_cur_motor_2
+                0x000015a4       0x2c ./protokol.o
+                0x000015a4                set_spd_get_cur_motor_2
  .text.get_cur_motor_2
-                0x00001514       0x1c ./protokol.o
-                0x00001514                get_cur_motor_2
+                0x000015d0       0x1c ./protokol.o
+                0x000015d0                get_cur_motor_2
  .text.get_spd_motor_2
-                0x00001530       0x1c ./protokol.o
-                0x00001530                get_spd_motor_2
+                0x000015ec       0x1c ./protokol.o
+                0x000015ec                get_spd_motor_2
  .text.get_enc_motor_2
-                0x0000154c       0x1c ./protokol.o
-                0x0000154c                get_enc_motor_2
+                0x00001608       0x1c ./protokol.o
+                0x00001608                get_enc_motor_2
  .text.reset_motor_enc
-                0x00001568       0x1c ./protokol.o
-                0x00001568                reset_motor_enc
- .text.test     0x00001584       0x1c ./protokol.o
-                0x00001584                test
+                0x00001624       0x1c ./protokol.o
+                0x00001624                reset_motor_enc
+ .text.test     0x00001640       0x1c ./protokol.o
+                0x00001640                test
+ *fill*         0x0000165c        0x4 
  .text.tToSpeed
-                0x000015a0       0xdc ./regulering.o
-                0x000015a0                tToSpeed
- .text.goTo     0x0000167c      0x130 ./regulering.o
-                0x0000167c                goTo
- .text.readSPI  0x000017ac       0x30 ./spi.o
-                0x000017ac                readSPI
+                0x00001660       0x68 ./regulering.o
+                0x00001660                tToSpeed
+ .text.goTo     0x000016c8      0x210 ./regulering.o
+                0x000016c8                goTo
+ .text.goTo2    0x000018d8      0x210 ./regulering.o
+                0x000018d8                goTo2
+ .text.readSPI  0x00001ae8       0x30 ./spi.o
+                0x00001ae8                readSPI
  .text.writeSPI
-                0x000017dc       0x30 ./spi.o
-                0x000017dc                writeSPI
+                0x00001b18       0x30 ./spi.o
+                0x00001b18                writeSPI
  .text.clr_rx_spi
-                0x0000180c       0x28 ./spi.o
-                0x0000180c                clr_rx_spi
+                0x00001b48       0x28 ./spi.o
+                0x00001b48                clr_rx_spi
  .text.init_spi2
-                0x00001834       0x90 ./spi.o
-                0x00001834                init_spi2
+                0x00001b70       0x90 ./spi.o
+                0x00001b70                init_spi2
  .text.systick_handler
-                0x000018c4       0x24 ./systick.o
-                0x000018c4                systick_handler
+                0x00001c00       0x24 ./systick.o
+                0x00001c00                systick_handler
  .text.enable_global_int
-                0x000018e8       0x10 ./systick.o
-                0x000018e8                enable_global_int
+                0x00001c24       0x10 ./systick.o
+                0x00001c24                enable_global_int
  .text.disable_global_int
-                0x000018f8       0x10 ./systick.o
-                0x000018f8                disable_global_int
+                0x00001c34       0x10 ./systick.o
+                0x00001c34                disable_global_int
  .text.init_systick
-                0x00001908       0x84 ./systick.o
-                0x00001908                init_systick
+                0x00001c44       0x84 ./systick.o
+                0x00001c44                init_systick
  .text.ResetISR
-                0x0000198c       0x68 ./tm4c123gh6pm_startup_ccs_gcc.o
-                0x0000198c                ResetISR
- .text.NmiSR    0x000019f4        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00001cc8       0x68 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00001cc8                ResetISR
+ .text.NmiSR    0x00001d30        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
  .text.FaultISR
-                0x000019fc        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00001d38        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
  .text.IntDefaultHandler
-                0x00001a04        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00001d40        0x8 ./tm4c123gh6pm_startup_ccs_gcc.o
  .text.lcrh_databits
-                0x00001a0c       0x2c ./uart.o
-                0x00001a0c                lcrh_databits
+                0x00001d48       0x2c ./uart.o
+                0x00001d48                lcrh_databits
  .text.lcrh_stopbits
-                0x00001a38       0x24 ./uart.o
-                0x00001a38                lcrh_stopbits
+                0x00001d74       0x24 ./uart.o
+                0x00001d74                lcrh_stopbits
  .text.lcrh_parity
-                0x00001a5c       0x50 ./uart.o
-                0x00001a5c                lcrh_parity
+                0x00001d98       0x50 ./uart.o
+                0x00001d98                lcrh_parity
  .text.uart0_fifos_enable
-                0x00001aac       0x1c ./uart.o
-                0x00001aac                uart0_fifos_enable
+                0x00001de8       0x1c ./uart.o
+                0x00001de8                uart0_fifos_enable
  .text.uart0_fifos_disable
-                0x00001ac8       0x1c ./uart.o
-                0x00001ac8                uart0_fifos_disable
+                0x00001e04       0x1c ./uart.o
+                0x00001e04                uart0_fifos_disable
  .text.uart0_rx_rdy
-                0x00001ae4       0x20 ./uart.o
-                0x00001ae4                uart0_rx_rdy
+                0x00001e20       0x20 ./uart.o
+                0x00001e20                uart0_rx_rdy
  .text.uart0_getc
-                0x00001b04       0x18 ./uart.o
-                0x00001b04                uart0_getc
+                0x00001e40       0x18 ./uart.o
+                0x00001e40                uart0_getc
  .text.uart0_tx_rdy
-                0x00001b1c       0x20 ./uart.o
-                0x00001b1c                uart0_tx_rdy
+                0x00001e58       0x20 ./uart.o
+                0x00001e58                uart0_tx_rdy
  .text.uart0_putc
-                0x00001b3c       0x20 ./uart.o
-                0x00001b3c                uart0_putc
+                0x00001e78       0x20 ./uart.o
+                0x00001e78                uart0_putc
  .text.uartReadChar
-                0x00001b5c       0x20 ./uart.o
-                0x00001b5c                uartReadChar
+                0x00001e98       0x20 ./uart.o
+                0x00001e98                uartReadChar
  .text.uartWriteChar
-                0x00001b7c       0x30 ./uart.o
-                0x00001b7c                uartWriteChar
+                0x00001eb8       0x30 ./uart.o
+                0x00001eb8                uartWriteChar
  .text.uartWriteStr
-                0x00001bac       0x28 ./uart.o
-                0x00001bac                uartWriteStr
+                0x00001ee8       0x28 ./uart.o
+                0x00001ee8                uartWriteStr
  .text.UART_OutUDec
-                0x00001bd4       0x4c ./uart.o
-                0x00001bd4                UART_OutUDec
+                0x00001f10       0x4c ./uart.o
+                0x00001f10                UART_OutUDec
  .text.init_uart0
-                0x00001c20       0xf8 ./uart.o
-                0x00001c20                init_uart0
- .text.exit     0x00001d18       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-exit.o)
-                0x00001d18                exit
+                0x00001f5c       0xf8 ./uart.o
+                0x00001f5c                init_uart0
+ .text.exit     0x00002054       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-exit.o)
+                0x00002054                exit
  .text.__libc_init_array
-                0x00001d38       0x50 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-init.o)
-                0x00001d38                __libc_init_array
- .text.memset   0x00001d88       0x9c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
-                0x00001d88                memset
+                0x00002074       0x50 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-init.o)
+                0x00002074                __libc_init_array
+ .text.memset   0x000020c4       0x9c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
+                0x000020c4                memset
  .text.startup.register_fini
-                0x00001e24       0x14 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
+                0x00002160       0x14 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
  .text.__call_exitprocs
-                0x00001e38       0xd4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
-                0x00001e38                __call_exitprocs
- .text.atexit   0x00001f0c        0xc c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-atexit.o)
-                0x00001f0c                atexit
+                0x00002174       0xd4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
+                0x00002174                __call_exitprocs
+ .text.atexit   0x00002248        0xc c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-atexit.o)
+                0x00002248                atexit
  .text.__libc_fini_array
-                0x00001f18       0x2c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-fini.o)
-                0x00001f18                __libc_fini_array
+                0x00002254       0x2c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-fini.o)
+                0x00002254                __libc_fini_array
  .text.__register_exitproc
-                0x00001f44       0xa4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__atexit.o)
-                0x00001f44                __register_exitproc
- .text._exit    0x00001fe8        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
-                0x00001fe8                _exit
-                0x00001fec                . = ALIGN (0x4)
+                0x00002280       0xa4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__atexit.o)
+                0x00002280                __register_exitproc
+ .text._exit    0x00002324        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+                0x00002324                _exit
+                0x00002328                . = ALIGN (0x4)
  *(.ctors)
-                0x00001fec                . = ALIGN (0x4)
+                0x00002328                . = ALIGN (0x4)
  *(.dtors)
-                0x00001fec                . = ALIGN (0x4)
-                0x00001fec                __init_array_start = .
+                0x00002328                . = ALIGN (0x4)
+                0x00002328                __init_array_start = .
  *(.init_array*)
- .init_array    0x00001fec        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
+ .init_array    0x00002328        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
  .init_array.00000
-                0x00001ff0        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
-                0x00001ff4                __init_array_end = .
+                0x0000232c        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
+                0x00002330                __init_array_end = .
  *(.init)
- .init          0x00001ff4        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
-                0x00001ff4                _init
- .init          0x00001ff8        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
+ .init          0x00002330        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
+                0x00002330                _init
+ .init          0x00002334        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
  *(.fini*)
- .fini          0x00002000        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
-                0x00002000                _fini
- .fini_array    0x00002004        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
- .fini          0x00002008        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
-                0x00002010                PROVIDE (__etext, .)
-                0x00002010                PROVIDE (_etext, .)
-                0x00002010                PROVIDE (etext, .)
+ .fini          0x0000233c        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
+                0x0000233c                _fini
+ .fini_array    0x00002340        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
+ .fini          0x00002344        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
+                0x0000234c                PROVIDE (__etext, .)
+                0x0000234c                PROVIDE (_etext, .)
+                0x0000234c                PROVIDE (etext, .)
 
-.glue_7         0x00002010        0x0
+.glue_7         0x0000234c        0x0
  .glue_7        0x00000000        0x0 linker stubs
 
-.glue_7t        0x00002010        0x0
+.glue_7t        0x0000234c        0x0
  .glue_7t       0x00000000        0x0 linker stubs
 
-.vfp11_veneer   0x00002010        0x0
+.vfp11_veneer   0x0000234c        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
 
-.v4_bx          0x00002010        0x0
+.v4_bx          0x0000234c        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.iplt           0x00002010        0x0
+.iplt           0x0000234c        0x0
  .iplt          0x00000000        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
 
-.rodata         0x00002010       0x24
+.rodata         0x0000234c       0x24
  *(.rodata)
- .rodata        0x00002010       0x1b ./UI.o
+ .rodata        0x0000234c       0x1b ./UI.o
  *(.rodata*)
- *fill*         0x0000202b        0x1 
+ *fill*         0x00002367        0x1 
  .rodata.str1.4
-                0x0000202c        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-impure.o)
+                0x00002368        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-impure.o)
                                   0x2 (size before relaxing)
  .rodata._global_impure_ptr
-                0x00002030        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-impure.o)
-                0x00002030                _global_impure_ptr
+                0x0000236c        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-impure.o)
+                0x0000236c                _global_impure_ptr
 
-.eh_frame       0x00002034        0x4
- .eh_frame      0x00002034        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
- .eh_frame      0x00002034        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtend.o
+.eh_frame       0x00002370        0x4
+ .eh_frame      0x00002370        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
+ .eh_frame      0x00002370        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtend.o
 
-.data           0x20000000      0x434 load address 0x00002038
-                0x00002038                __data_load__ = LOADADDR (.data)
+.data           0x20000000      0x434 load address 0x00002374
+                0x00002374                __data_load__ = LOADADDR (.data)
                 0x20000000                __data_start__ = .
  *(.data)
  .data          0x20000000        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crti.o
@@ -376,9 +377,10 @@ LOAD ./uart.o
  *(.data*)
  .data.destination.3973
                 0x20000004        0x2 ./UI.o
- .data.iteration_counter.3984
+ .data.iteration_counter.3976
                 0x20000006        0x1 ./regulering.o
- *fill*         0x20000007        0x1 
+ .data.iteration_counter.3994
+                0x20000007        0x1 ./regulering.o
  .data.impure_data
                 0x20000008      0x428 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-impure.o)
  .data._impure_ptr
@@ -387,27 +389,27 @@ LOAD ./uart.o
                 0x20000434                . = ALIGN (0x4)
                 0x20000434                __data_end__ = .
 
-.jcr            0x20000434        0x4 load address 0x0000246c
+.jcr            0x20000434        0x4 load address 0x000027a8
  .jcr           0x20000434        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
  .jcr           0x20000434        0x4 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtend.o
 
-.igot.plt       0x20000438        0x0 load address 0x00002470
+.igot.plt       0x20000438        0x0 load address 0x000027ac
  .igot.plt      0x00000000        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
 
-.ARM.exidx      0x00002470        0x8
-                0x00002470                __exidx_start = .
+.ARM.exidx      0x000027ac        0x8
+                0x000027ac                __exidx_start = .
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00002470        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
-                0x00002478                __exidx_end = .
+ .ARM.exidx     0x000027ac        0x8 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
+                0x000027b4                __exidx_end = .
 
-.ARM.extab      0x00002478        0x0
+.ARM.extab      0x000027b4        0x0
  *(.ARM.extab* .gnu.linkonce.armextab.*)
- .ARM.extab     0x00002478        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
+ .ARM.extab     0x000027b4        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu/crt0.o
 
-.rel.dyn        0x00002478        0x0
+.rel.dyn        0x000027b4        0x0
  .rel.iplt      0x00000000        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtbegin.o
 
-.bss            0x20000438      0x270
+.bss            0x20000438      0x278
                 0x20000438                __bss_start__ = .
  *(.shbss)
  *(.bss)
@@ -442,88 +444,86 @@ LOAD ./uart.o
  .bss           0x20000454        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtend.o
  .bss           0x20000454        0x0 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu/crtn.o
  *(.bss.*)
+ .bss.hej.3974  0x20000454        0x1 ./UI.o
+ *fill*         0x20000455        0x1 
+ .bss.enc.3971  0x20000456        0x2 ./UI.o
  .bss.speed.3972
-                0x20000454        0x2 ./UI.o
- .bss.var.3975  0x20000456        0x2 ./UI.o
- .bss.speed2.3974
                 0x20000458        0x2 ./UI.o
- .bss.enc.3971  0x2000045a        0x2 ./UI.o
+ .bss.var.3976  0x2000045a        0x2 ./UI.o
+ .bss.speed2.3975
+                0x2000045c        0x2 ./UI.o
  .bss.button_state.4008
-                0x2000045c        0x1 ./button.o
- *fill*         0x2000045d        0x1 
+                0x2000045e        0x1 ./button.o
+ *fill*         0x2000045f        0x1 
  .bss.button_timer.4009
-                0x2000045e        0x2 ./button.o
+                0x20000460        0x2 ./button.o
  .bss.button_state.4008
-                0x20000460        0x1 ./button2.o
- *fill*         0x20000461        0x1 
+                0x20000462        0x1 ./button2.o
+ *fill*         0x20000463        0x1 
  .bss.button_timer.4009
-                0x20000462        0x2 ./button2.o
+                0x20000464        0x2 ./button2.o
  .bss.counter_timer.4006
-                0x20000464        0x2 ./counter.o
+                0x20000466        0x2 ./counter.o
  .bss.counter_state.4004
-                0x20000466        0x1 ./counter.o
+                0x20000468        0x1 ./counter.o
  .bss.counter_value.4005
-                0x20000467        0x1 ./counter.o
- .bss.pwm       0x20000468        0x1 ./main.o
-                0x20000468                pwm
- *fill*         0x20000469        0x1 
- .bss.avg5.3965
-                0x2000046a        0x2 ./regulering.o
- .bss.avg6.3966
-                0x2000046c        0x2 ./regulering.o
- .bss.avg4.3964
-                0x2000046e        0x2 ./regulering.o
- .bss.avg3.3963
-                0x20000470        0x2 ./regulering.o
- .bss.avg2.3962
-                0x20000472        0x2 ./regulering.o
- .bss.avg1.3961
-                0x20000474        0x2 ./regulering.o
- *fill*         0x20000476        0x2 
- .bss.error_pos.3973
+                0x20000469        0x1 ./counter.o
+ .bss.pwm       0x2000046a        0x1 ./main.o
+                0x2000046a                pwm
+ *fill*         0x2000046b        0x1 
+ .bss.error_pos.3965
+                0x2000046c        0x4 ./regulering.o
+ .bss.integral_pos.3966
+                0x20000470        0x4 ./regulering.o
+ .bss.last_error_pos.3964
+                0x20000474        0x4 ./regulering.o
+ .bss.derivative_pos.3967
                 0x20000478        0x4 ./regulering.o
- .bss.last_error_pos.3972
-                0x2000047c        0x4 ./regulering.o
- .bss.derivative_pos.3976
+ .bss.output_pos.3968
+                0x2000047c        0x2 ./regulering.o
+ *fill*         0x2000047e        0x2 
+ .bss.error_hastighed.3973
                 0x20000480        0x4 ./regulering.o
- .bss.output_pos.3980
-                0x20000484        0x2 ./regulering.o
- *fill*         0x20000486        0x2 
- .bss.error_hastighed.3981
+ .bss.error_pos.3983
+                0x20000484        0x4 ./regulering.o
+ .bss.integral_pos.3984
                 0x20000488        0x4 ./regulering.o
- .bss.integral_pos.3975
+ .bss.last_error_pos.3982
                 0x2000048c        0x4 ./regulering.o
- .bss.ticks     0x20000490        0x2 ./systick.o
-                0x20000490                ticks
- *fill*         0x20000492        0x2 
+ .bss.derivative_pos.3985
+                0x20000490        0x4 ./regulering.o
+ .bss.output_pos.3986
+                0x20000494        0x2 ./regulering.o
+ *fill*         0x20000496        0x2 
+ .bss.error_hastighed.3991
+                0x20000498        0x4 ./regulering.o
+ .bss.ticks     0x2000049c        0x2 ./systick.o
+                0x2000049c                ticks
+ *fill*         0x2000049e        0x2 
  .bss.pui32Stack
-                0x20000494      0x200 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x200004a0      0x200 ./tm4c123gh6pm_startup_ccs_gcc.o
  *(COMMON)
- COMMON         0x20000694        0xd ./main.o
-                0x20000694                c
-                0x20000698                RX_SPI
-                0x2000069c                TX_SPI
-                0x200006a0                var
- *fill*         0x200006a1        0x1 
- COMMON         0x200006a2        0x4 ./regulering.o
-                0x200006a2                dummy1
-                0x200006a4                dummy2
-                0x200006a8                . = ALIGN (0x4)
- *fill*         0x200006a6        0x2 
-                0x200006a8                __bss_end__ = .
+ COMMON         0x200006a0        0xd ./main.o
+                0x200006a0                c
+                0x200006a4                RX_SPI
+                0x200006a8                TX_SPI
+                0x200006ac                var
+                0x200006b0                . = ALIGN (0x4)
+ *fill*         0x200006ad        0x3 
+                0x200006b0                __bss_end__ = .
 
-.heap           0x200006a8        0x0
-                0x200006a8                __heap_start__ = .
-                0x200006a8                end = __heap_start__
-                0x200006a8                _end = end
-                0x200006a8                __end = end
+.heap           0x200006b0        0x0
+                0x200006b0                __heap_start__ = .
+                0x200006b0                end = __heap_start__
+                0x200006b0                _end = end
+                0x200006b0                __end = end
  *(.heap)
-                0x200006a8                __heap_end__ = .
-                0x200006a8                __HeapLimit = __heap_end__
+                0x200006b0                __heap_end__ = .
+                0x200006b0                __HeapLimit = __heap_end__
 
-.stack          0x200006a8        0x0
-                0x200006a8                _stack = .
-                0x200006a8                __stack = .
+.stack          0x200006b0        0x0
+                0x200006b0                _stack = .
+                0x200006b0                __stack = .
  *(.stack)
 START GROUP
 LOAD c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m/fpu\libgcc.a
@@ -618,37 +618,37 @@ OUTPUT(test.out elf32-littlearm)
  .comment       0x00000000       0x71 ./tm4c123gh6pm_startup_ccs_gcc.o
  .comment       0x00000000       0x71 ./uart.o
 
-.debug_info     0x00000000     0x12ab
- .debug_info    0x00000000      0x1c8 ./UI.o
- .debug_info    0x000001c8      0x104 ./button.o
- .debug_info    0x000002cc      0x104 ./button2.o
- .debug_info    0x000003d0       0xe9 ./counter.o
- .debug_info    0x000004b9       0xbd ./countled.o
- .debug_info    0x00000576       0xb2 ./gpio.o
- .debug_info    0x00000628      0x163 ./main.o
- .debug_info    0x0000078b      0x237 ./protokol.o
- .debug_info    0x000009c2      0x281 ./regulering.o
- .debug_info    0x00000c43      0x123 ./spi.o
- .debug_info    0x00000d66       0xfb ./systick.o
- .debug_info    0x00000e61      0x176 ./tm4c123gh6pm_startup_ccs_gcc.o
- .debug_info    0x00000fd7      0x2d4 ./uart.o
+.debug_info     0x00000000     0x13c5
+ .debug_info    0x00000000      0x25f ./UI.o
+ .debug_info    0x0000025f      0x104 ./button.o
+ .debug_info    0x00000363      0x104 ./button2.o
+ .debug_info    0x00000467       0xe9 ./counter.o
+ .debug_info    0x00000550       0xbd ./countled.o
+ .debug_info    0x0000060d       0xb2 ./gpio.o
+ .debug_info    0x000006bf      0x163 ./main.o
+ .debug_info    0x00000822      0x237 ./protokol.o
+ .debug_info    0x00000a59      0x304 ./regulering.o
+ .debug_info    0x00000d5d      0x123 ./spi.o
+ .debug_info    0x00000e80       0xfb ./systick.o
+ .debug_info    0x00000f7b      0x176 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_info    0x000010f1      0x2d4 ./uart.o
 
-.debug_abbrev   0x00000000      0x761
- .debug_abbrev  0x00000000       0xd1 ./UI.o
- .debug_abbrev  0x000000d1       0x72 ./button.o
- .debug_abbrev  0x00000143       0x72 ./button2.o
- .debug_abbrev  0x000001b5       0x6c ./counter.o
- .debug_abbrev  0x00000221       0x5b ./countled.o
- .debug_abbrev  0x0000027c       0x5b ./gpio.o
- .debug_abbrev  0x000002d7       0x9f ./main.o
- .debug_abbrev  0x00000376       0x8f ./protokol.o
- .debug_abbrev  0x00000405       0x83 ./regulering.o
- .debug_abbrev  0x00000488       0xaf ./spi.o
- .debug_abbrev  0x00000537       0x77 ./systick.o
- .debug_abbrev  0x000005ae       0xca ./tm4c123gh6pm_startup_ccs_gcc.o
- .debug_abbrev  0x00000678       0xe9 ./uart.o
+.debug_abbrev   0x00000000      0x772
+ .debug_abbrev  0x00000000       0xdc ./UI.o
+ .debug_abbrev  0x000000dc       0x72 ./button.o
+ .debug_abbrev  0x0000014e       0x72 ./button2.o
+ .debug_abbrev  0x000001c0       0x6c ./counter.o
+ .debug_abbrev  0x0000022c       0x5b ./countled.o
+ .debug_abbrev  0x00000287       0x5b ./gpio.o
+ .debug_abbrev  0x000002e2       0x9f ./main.o
+ .debug_abbrev  0x00000381       0x8f ./protokol.o
+ .debug_abbrev  0x00000410       0x89 ./regulering.o
+ .debug_abbrev  0x00000499       0xaf ./spi.o
+ .debug_abbrev  0x00000548       0x77 ./systick.o
+ .debug_abbrev  0x000005bf       0xca ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_abbrev  0x00000689       0xe9 ./uart.o
 
-.debug_aranges  0x00000000      0x2b8
+.debug_aranges  0x00000000      0x2c0
  .debug_aranges
                 0x00000000       0x28 ./UI.o
  .debug_aranges
@@ -666,17 +666,17 @@ OUTPUT(test.out elf32-littlearm)
  .debug_aranges
                 0x000000f8       0x68 ./protokol.o
  .debug_aranges
-                0x00000160       0x28 ./regulering.o
+                0x00000160       0x30 ./regulering.o
  .debug_aranges
-                0x00000188       0x38 ./spi.o
+                0x00000190       0x38 ./spi.o
  .debug_aranges
-                0x000001c0       0x38 ./systick.o
+                0x000001c8       0x38 ./systick.o
  .debug_aranges
-                0x000001f8       0x38 ./tm4c123gh6pm_startup_ccs_gcc.o
+                0x00000200       0x38 ./tm4c123gh6pm_startup_ccs_gcc.o
  .debug_aranges
-                0x00000230       0x88 ./uart.o
+                0x00000238       0x88 ./uart.o
 
-.debug_ranges   0x00000000      0x1e8
+.debug_ranges   0x00000000      0x1f0
  .debug_ranges  0x00000000       0x18 ./UI.o
  .debug_ranges  0x00000018       0x18 ./button.o
  .debug_ranges  0x00000030       0x18 ./button2.o
@@ -685,56 +685,56 @@ OUTPUT(test.out elf32-littlearm)
  .debug_ranges  0x00000068       0x10 ./gpio.o
  .debug_ranges  0x00000078       0x10 ./main.o
  .debug_ranges  0x00000088       0x58 ./protokol.o
- .debug_ranges  0x000000e0       0x18 ./regulering.o
- .debug_ranges  0x000000f8       0x28 ./spi.o
- .debug_ranges  0x00000120       0x28 ./systick.o
- .debug_ranges  0x00000148       0x28 ./tm4c123gh6pm_startup_ccs_gcc.o
- .debug_ranges  0x00000170       0x78 ./uart.o
+ .debug_ranges  0x000000e0       0x20 ./regulering.o
+ .debug_ranges  0x00000100       0x28 ./spi.o
+ .debug_ranges  0x00000128       0x28 ./systick.o
+ .debug_ranges  0x00000150       0x28 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_ranges  0x00000178       0x78 ./uart.o
 
-.debug_line     0x00000000      0xece
- .debug_line    0x00000000       0xb6 ./UI.o
- .debug_line    0x000000b6      0x148 ./button.o
- .debug_line    0x000001fe      0x149 ./button2.o
- .debug_line    0x00000347       0x7f ./counter.o
- .debug_line    0x000003c6      0x121 ./countled.o
- .debug_line    0x000004e7      0x10a ./gpio.o
- .debug_line    0x000005f1      0x128 ./main.o
- .debug_line    0x00000719       0xfd ./protokol.o
- .debug_line    0x00000816       0x86 ./regulering.o
- .debug_line    0x0000089c      0x161 ./spi.o
- .debug_line    0x000009fd      0x153 ./systick.o
- .debug_line    0x00000b50      0x158 ./tm4c123gh6pm_startup_ccs_gcc.o
- .debug_line    0x00000ca8      0x226 ./uart.o
+.debug_line     0x00000000      0xf19
+ .debug_line    0x00000000       0xc6 ./UI.o
+ .debug_line    0x000000c6      0x148 ./button.o
+ .debug_line    0x0000020e      0x149 ./button2.o
+ .debug_line    0x00000357       0x7f ./counter.o
+ .debug_line    0x000003d6      0x121 ./countled.o
+ .debug_line    0x000004f7      0x10a ./gpio.o
+ .debug_line    0x00000601      0x128 ./main.o
+ .debug_line    0x00000729       0xfd ./protokol.o
+ .debug_line    0x00000826       0xc1 ./regulering.o
+ .debug_line    0x000008e7      0x161 ./spi.o
+ .debug_line    0x00000a48      0x153 ./systick.o
+ .debug_line    0x00000b9b      0x158 ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_line    0x00000cf3      0x226 ./uart.o
 
-.debug_str      0x00000000      0x6a9
- .debug_str     0x00000000      0x1d4 ./UI.o
-                                0x201 (size before relaxing)
- .debug_str     0x000001d4       0x5a ./button.o
+.debug_str      0x00000000      0x683
+ .debug_str     0x00000000      0x1da ./UI.o
+                                0x207 (size before relaxing)
+ .debug_str     0x000001da       0x5a ./button.o
                                 0x205 (size before relaxing)
- .debug_str     0x0000022e       0x2e ./button2.o
+ .debug_str     0x00000234       0x2e ./button2.o
                                 0x20b (size before relaxing)
- .debug_str     0x0000025c       0x37 ./counter.o
+ .debug_str     0x00000262       0x37 ./counter.o
                                 0x1e7 (size before relaxing)
- .debug_str     0x00000293       0x1b ./countled.o
+ .debug_str     0x00000299       0x1b ./countled.o
                                 0x1d8 (size before relaxing)
- .debug_str     0x000002ae       0x1a ./gpio.o
+ .debug_str     0x000002b4       0x1a ./gpio.o
                                 0x1c3 (size before relaxing)
- .debug_str     0x000002c8       0x4a ./main.o
+ .debug_str     0x000002ce       0x4a ./main.o
                                 0x1f9 (size before relaxing)
- .debug_str     0x00000312       0xaa ./protokol.o
+ .debug_str     0x00000318       0xaa ./protokol.o
                                 0x26c (size before relaxing)
- .debug_str     0x000003bc       0xed ./regulering.o
-                                0x2bd (size before relaxing)
- .debug_str     0x000004a9       0x18 ./spi.o
+ .debug_str     0x000003c2       0xc1 ./regulering.o
+                                0x297 (size before relaxing)
+ .debug_str     0x00000483       0x18 ./spi.o
                                 0x1f1 (size before relaxing)
- .debug_str     0x000004c1       0x4f ./systick.o
+ .debug_str     0x0000049b       0x4f ./systick.o
                                 0x205 (size before relaxing)
- .debug_str     0x00000510       0xaa ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_str     0x000004ea       0xaa ./tm4c123gh6pm_startup_ccs_gcc.o
                                 0x246 (size before relaxing)
- .debug_str     0x000005ba       0xef ./uart.o
+ .debug_str     0x00000594       0xef ./uart.o
                                 0x2e7 (size before relaxing)
 
-.debug_frame    0x00000000      0x918
+.debug_frame    0x00000000      0x940
  .debug_frame   0x00000000       0x5c ./UI.o
  .debug_frame   0x0000005c       0x54 ./button.o
  .debug_frame   0x000000b0       0x54 ./button2.o
@@ -743,16 +743,16 @@ OUTPUT(test.out elf32-littlearm)
  .debug_frame   0x00000174       0x38 ./gpio.o
  .debug_frame   0x000001ac       0x30 ./main.o
  .debug_frame   0x000001dc      0x1a0 ./protokol.o
- .debug_frame   0x0000037c       0x5c ./regulering.o
- .debug_frame   0x000003d8       0xa4 ./spi.o
- .debug_frame   0x0000047c       0x90 ./systick.o
- .debug_frame   0x0000050c       0x7c ./tm4c123gh6pm_startup_ccs_gcc.o
- .debug_frame   0x00000588      0x210 ./uart.o
- .debug_frame   0x00000798       0x28 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-exit.o)
- .debug_frame   0x000007c0       0x2c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-init.o)
- .debug_frame   0x000007ec       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
- .debug_frame   0x00000820       0x50 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
- .debug_frame   0x00000870       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-atexit.o)
- .debug_frame   0x00000890       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-fini.o)
- .debug_frame   0x000008c4       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__atexit.o)
- .debug_frame   0x000008f8       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
+ .debug_frame   0x0000037c       0x84 ./regulering.o
+ .debug_frame   0x00000400       0xa4 ./spi.o
+ .debug_frame   0x000004a4       0x90 ./systick.o
+ .debug_frame   0x00000534       0x7c ./tm4c123gh6pm_startup_ccs_gcc.o
+ .debug_frame   0x000005b0      0x210 ./uart.o
+ .debug_frame   0x000007c0       0x28 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-exit.o)
+ .debug_frame   0x000007e8       0x2c c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-init.o)
+ .debug_frame   0x00000814       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-memset.o)
+ .debug_frame   0x00000848       0x50 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00000898       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-atexit.o)
+ .debug_frame   0x000008b8       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-fini.o)
+ .debug_frame   0x000008ec       0x34 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libg.a(lib_a-__atexit.o)
+ .debug_frame   0x00000920       0x20 c:/ti/ccsv7/tools/compiler/gcc-arm-none-eabi-4_9-2015q3/bin/../lib/gcc/arm-none-eabi/4.9.3/../../../../arm-none-eabi/lib/armv7e-m/fpu\libnosys.a(_exit.o)
