@@ -1,0 +1,7 @@
+V3 3
+FL /home/anders/Dropbox/Robtek/4_semester/DIG/SPI/SPI.vhd 2017/03/17.12:08:24 P.20131013
+EN work/SPI 1489748921 FL /home/anders/Dropbox/Robtek/4_semester/DIG/SPI/SPI.vhd \
+      PB ieee/std_logic_1164 1381692176 PB ieee/NUMERIC_STD 1381692181 \
+      PB ieee/std_logic_arith 1381692177 PB ieee/STD_LOGIC_UNSIGNED 1381692179
+AR work/SPI/Behavioral 1489748922 \
+      FL /home/anders/Dropbox/Robtek/4_semester/DIG/SPI/SPI.vhd EN work/SPI 1489748921

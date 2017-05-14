@@ -1,0 +1,5 @@
+set -tmpdir "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/xst/projnav.tmp"
+set -xsthdpdir "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/xst"
+elaborate
+-ifn PrescalerPWM.prj
+-ifmt mixed
