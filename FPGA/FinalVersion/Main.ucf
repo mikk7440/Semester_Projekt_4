@@ -1,0 +1,63 @@
+NET "CLK" 	LOC = "B8";
+NET "SSCLK" 	LOC = "L15";
+NET "MOSI" 	LOC = "M15";
+NET "MISO" 	LOC = "L17";
+NET "SS"  	LOC = "K12";
+
+NET Hallindex1  LOC = "F14";
+NET Hallindex2  LOC = "J16";
+NET "Enc1<0>"  LOC = "G13"; #blaa
+NET "Enc1<1>"	LOC = "G16"; #lilla
+NET "Enc2<0>"  LOC = "H16"; #blaa
+NET "Enc2<1>"	LOC = "J12"; #lilla
+
+
+NET PWMR2			LOC = "R18";
+NET PWML2			LOC = "R16";
+NET En2				LOC = "R15";
+
+NET PWMR1			LOC = "T18";
+NET PWML1			LOC = "T17";
+NET En1				LOC = "U18";
+
+#	-==== JD1 ====-
+
+net CS	loc = "J13";
+net D0	loc = "M18";
+net D1	loc = "N18";
+net MSclk loc = "P18";
+
+
+
+NET "Led<0>" LOC = "J14";
+NET "Led<1>" LOC = "J15";
+NET "Led<2>" LOC = "K15";
+NET "Led<3>" LOC = "K14";
+NET "Led<4>" LOC = "E17";
+NET "Led<5>" LOC = "P15";
+NET "Led<6>" LOC = "F4";
+NET "Led<7>" LOC = "R4";
+
+
+NET "segm<0>"  LOC = "L18";	
+NET "segm<1>"  LOC = "F18";
+NET "segm<2>"  LOC = "D17";
+NET "segm<3>"  LOC = "D16";
+NET "segm<4>"  LOC = "G14";
+NET "segm<5>"  LOC = "J17";
+NET "segm<6>"  LOC = "H14";
+NET "segm<7>" 	LOC = "C17";
+
+net "Sw<0>" loc = "G18";
+net "Sw<1>" loc = "H18";
+net "Sw<2>" loc = "K18";
+net "Sw<3>" loc = "K17";
+net "Sw<4>" loc = "L14";
+net "Sw<5>" loc = "L13";
+net "Sw<6>" loc = "N17";
+net "Sw<7>" loc = "R17";
+
+NET "An<0>"  LOC = "F17";
+NET "An<1>"  LOC = "H17";
+NET "An<2>"  LOC = "C18";
+NET "An<3>"  LOC = "F15";
