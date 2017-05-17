@@ -234,31 +234,31 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">U1/U11/RX_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">Main</arg>&gt;.
 </msg>
 
-<msg type="warning" file="Xst" num="1710" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">seg7Number_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1710" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">seg7Number_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">seg7Number_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U1/DataTX_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U1/DataTX_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U1/DataTX_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U1/DataTX_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U3/UM4/EncoderOld_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U3/UM4/EncoderOld_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U3/UM4/EncoderOld_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U3/UM4/EncoderOld_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U2/UM4/EncoderOld_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U2/UM4/EncoderOld_12</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1895" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U2/UM4/EncoderOld_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1895" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">U2/UM4/EncoderOld_13</arg>&gt; (without init value) has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">Main</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+<msg type="info" file="Xst" num="2169" delta="new" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

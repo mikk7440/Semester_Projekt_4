@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
@@ -122,7 +122,8 @@ Architecture behavioral of Entity prescalertransistor is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd" in Library work.
 Architecture behavioral of Entity pwm is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd" in Library work.
-Architecture behavioral of Entity encoder is up to date.
+Entity <encoder> compiled.
+Entity <encoder> (Architecture <behavioral>) compiled.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd" in Library work.
 Architecture behavioral of Entity velocity is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd" in Library work.
@@ -136,8 +137,7 @@ Architecture behavioral of Entity currentsensor is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd" in Library work.
 Architecture behavioral of Entity seg7 is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd" in Library work.
-Entity <main> compiled.
-Entity <main> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity main is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -1110,13 +1110,13 @@ Delay:               5.423ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 18.36 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 14.88 secs
  
 --> 
 
 
-Total memory usage is 569644 kilobytes
+Total memory usage is 569912 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   73 (   0 filtered)

@@ -51,7 +51,7 @@ end component;
 
 type states is (G1,G2,G3,G4,error);
 signal HallsensorFiltered : STD_LOGIC_VECTOR(1 downto 0);
-signal posision : integer range 0 to 3000 := 1000;		--posision count start value
+signal posision : integer range 0 to 3000 := 2000;		--posision count start value
 signal state : states;				--motor start state value  			--------Home posision---- remember to set!!!
 --signal posisionV : STD_LOGIC_VECTOR(7 downto 0):=(others =>'0');
 begin
@@ -67,7 +67,7 @@ begin
 	if rising_edge(CLK) then 		
 				
 		if Reset = '1' then
-			posision <= 2000;
+			posision <=2000;
 		end if;
 		
 		case state is
