@@ -21,6 +21,9 @@ ORDERED_OBJS += \
 "./uart.o" \
 -Wl,-T"../tm4c123gh6pm.lds" \
 $(GEN_CMDS__FLAG) \
+-Wl,--start-group \
+-lm \
+-Wl,--end-group \
 
 -include ../makefile.init
 

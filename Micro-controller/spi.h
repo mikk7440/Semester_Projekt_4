@@ -52,14 +52,28 @@ extern void init_spi2();
 
 /****************************** End Of Module *******************************/
 
-extern void spi_rx_task(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
+extern void spi_rx_task_acc(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
 /*****************************************************************************
 *   Input    :
 *   Output   : -
 *   Function : Initialize SSI module2 as Freescale SPI
 ******************************************************************************/
 
-extern void spi_tx_task(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
+extern void spi_tx_task_acc(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
+/*****************************************************************************
+*   Input    :
+*   Output   : -
+*   Function : Initialize SSI module2 as Freescale SPI
+******************************************************************************/
+
+extern void spi_rx_task_fpga(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
+/*****************************************************************************
+*   Input    :
+*   Output   : -
+*   Function : Initialize SSI module2 as Freescale SPI
+******************************************************************************/
+
+extern void spi_tx_task_fpga(INT8U task_id, INT8U task_state, INT8U event, INT8U data);
 /*****************************************************************************
 *   Input    :
 *   Output   : -
