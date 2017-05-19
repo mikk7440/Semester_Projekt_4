@@ -284,6 +284,7 @@ void schedule()
 *   Function : See module specification (.h-file).
 *****************************************************************************/
 {
+
   while(1)
   {
     while( !ticks );

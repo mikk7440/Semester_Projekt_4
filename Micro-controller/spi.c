@@ -99,89 +99,45 @@ extern void init_spi0()
 
 }
 
-BOOLEAN spi_ready_tx_acc()
+BOOLEAN spi_ready_tx()
 {
     if((SSI0_SR_R & (1<<0)) )         // Hvis vi kigger p� SSI_0 og transmit bufferen er tom
         return TRUE;
     return FALSE;
 }
 
-BOOLEAN spi_ready_rx_acc()
+BOOLEAN spi_ready_rx()
 {
     if((SSI0_SR_R & (1<<2)))         // Hvis vi kigger p� SSI_0 og recive bufferen er full
         return TRUE;
     return FALSE;
 }
 
-BOOLEAN spi_ready_tx_fpga()
-{
-    if((SSI2_SR_R & (1<<0)) )         // Hvis vi kigger p� SSI_0 og transmit bufferen er tom
-        return TRUE;
-    return FALSE;
-}
-
-BOOLEAN spi_ready_rx_fpga()
-{
-    if((SSI2_SR_R & (1<<2)))         // Hvis vi kigger p� SSI_0 og recive bufferen er full
-        return TRUE;
-    return FALSE;
-}
-
-INT16U spi_get_data_acc()
+INT16U spi_get_data()
 {
     return SSI0_DR_R;
 }
 
-INT16U spi_get_data_fpga()
-{
-    return SSI2_DR_R;
-}
-
-extern void spi_tx_task_acc(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
+extern void spi_tx_task(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
 /*****************************************************************************
 *   Function : See module specification (.h-file).
 *****************************************************************************/
 {
-        if(get_queue(QUEUE_SPI_TX_ACC, &spi_data, WAIT_FOREVER))
-        {
-            SSI0_DR_R = spi_data;
-        }
-}
-
-
-extern void spi_rx_task_acc(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
-/*****************************************************************************
-*   Function : See module specification (.h-file).
-*****************************************************************************/
-{
-    if(spi_ready_rx_acc())
+    if(get_queue(QUEUE_SPI_TX_0, &spi_data, WAIT_FOREVER))
     {
-        put_queue( QUEUE_SPI_RX_ACC, spi_get_data_acc(), WAIT_FOREVER);
-    }
-
-}
-
-
-extern void spi_tx_task_fpga(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
-/*****************************************************************************
-*   Function : See module specification (.h-file).
-*****************************************************************************/
-{
-    if(get_queue(QUEUE_SPI_TX_FPGA, &spi_data, WAIT_FOREVER))
-    {
-        SSI2_DR_R = spi_data;
+        SSI0_DR_R = spi_data;
     }
 }
 
 
-extern void spi_rx_task_fpga(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
+extern void spi_rx_task(INT8U task_id, INT8U task_state, INT8U event, INT8U data)
 /*****************************************************************************
 *   Function : See module specification (.h-file).
 *****************************************************************************/
 {
-    if(spi_ready_rx_fpga())
+    if(spi_ready_rx())
     {
-        put_queue( QUEUE_SPI_RX_FPGA, spi_get_data_fpga(), WAIT_FOREVER);
+        put_queue( QUEUE_SPI_RX_0, spi_get_data(), WAIT_FOREVER);
     }
 
 }
