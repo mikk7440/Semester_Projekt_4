@@ -9,23 +9,23 @@ Target Device  : xc3s500e
 Target Package : fg320
 Target Speed   : -4
 Mapper Version : spartan3e -- $Revision: 1.55 $
-Mapped Date    : Wed May 17 10:15:25 2017
+Mapped Date    : Fri May 19 12:43:58 2017
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    0
 Logic Utilization:
-  Number of Slice Flip Flops:           447 out of   9,312    4%
-  Number of 4 input LUTs:             1,570 out of   9,312   16%
+  Number of Slice Flip Flops:           446 out of   9,312    4%
+  Number of 4 input LUTs:             1,524 out of   9,312   16%
 Logic Distribution:
-  Number of occupied Slices:          1,006 out of   4,656   21%
-    Number of Slices containing only related logic:   1,006 out of   1,006 100%
-    Number of Slices containing unrelated logic:          0 out of   1,006   0%
+  Number of occupied Slices:            981 out of   4,656   21%
+    Number of Slices containing only related logic:     981 out of     981 100%
+    Number of Slices containing unrelated logic:          0 out of     981   0%
       *See NOTES below for an explanation of the effects of unrelated logic.
-  Total Number of 4 input LUTs:       1,752 out of   9,312   18%
-    Number used as logic:             1,570
-    Number used as a route-thru:        182
+  Total Number of 4 input LUTs:       1,703 out of   9,312   18%
+    Number used as logic:             1,524
+    Number used as a route-thru:        179
 
   The Slice Logic Distribution report is not meaningful if the design is
   over-mapped for a non-slice resource or if Placement fails.
@@ -33,10 +33,10 @@ Logic Distribution:
   Number of bonded IOBs:                 49 out of     232   21%
   Number of BUFGMUXs:                     1 out of      24    4%
 
-Average Fanout of Non-Clock Nets:                3.04
+Average Fanout of Non-Clock Nets:                3.02
 
-Peak Memory Usage:  593 MB
-Total REAL time to MAP completion:  6 secs 
+Peak Memory Usage:  592 MB
+Total REAL time to MAP completion:  9 secs 
 Total CPU time to MAP completion:   3 secs 
 
 NOTES:

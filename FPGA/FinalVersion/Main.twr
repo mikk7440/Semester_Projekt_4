@@ -44,25 +44,25 @@ Setup/Hold to clock CLK
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-D0          |    0.627(R)|    0.719(R)|CLK_BUFGP         |   0.000|
-D1          |    0.943(R)|    0.467(R)|CLK_BUFGP         |   0.000|
-Enc1<0>     |    1.260(R)|    0.198(R)|CLK_BUFGP         |   0.000|
-Enc1<1>     |    1.198(R)|    0.272(R)|CLK_BUFGP         |   0.000|
-Enc2<0>     |    2.188(R)|   -0.541(R)|CLK_BUFGP         |   0.000|
-Enc2<1>     |    1.961(R)|   -0.129(R)|CLK_BUFGP         |   0.000|
-Hallindex1  |    4.483(R)|   -0.764(R)|CLK_BUFGP         |   0.000|
-Hallindex2  |    7.089(R)|   -1.322(R)|CLK_BUFGP         |   0.000|
-MOSI        |    0.644(R)|    0.701(R)|CLK_BUFGP         |   0.000|
-SS          |    4.781(R)|    0.824(R)|CLK_BUFGP         |   0.000|
-SSCLK       |   -0.028(R)|    1.241(R)|CLK_BUFGP         |   0.000|
-Sw<0>       |    7.870(R)|   -1.836(R)|CLK_BUFGP         |   0.000|
-Sw<1>       |    7.912(R)|   -1.870(R)|CLK_BUFGP         |   0.000|
-Sw<2>       |    8.281(R)|   -0.768(R)|CLK_BUFGP         |   0.000|
-Sw<3>       |    9.252(R)|   -1.064(R)|CLK_BUFGP         |   0.000|
-Sw<4>       |    8.989(R)|   -1.525(R)|CLK_BUFGP         |   0.000|
-Sw<5>       |    7.738(R)|   -1.290(R)|CLK_BUFGP         |   0.000|
-Sw<6>       |    9.716(R)|   -1.997(R)|CLK_BUFGP         |   0.000|
-Sw<7>       |   10.259(R)|   -2.021(R)|CLK_BUFGP         |   0.000|
+D0          |    0.803(R)|    0.562(R)|CLK_BUFGP         |   0.000|
+D1          |    0.308(R)|    0.975(R)|CLK_BUFGP         |   0.000|
+Enc1<0>     |    1.449(R)|    0.099(R)|CLK_BUFGP         |   0.000|
+Enc1<1>     |    0.988(R)|    0.430(R)|CLK_BUFGP         |   0.000|
+Enc2<0>     |    2.127(R)|   -0.488(R)|CLK_BUFGP         |   0.000|
+Enc2<1>     |    2.002(R)|   -0.360(R)|CLK_BUFGP         |   0.000|
+Hallindex1  |    4.156(R)|   -0.022(R)|CLK_BUFGP         |   0.000|
+Hallindex2  |    5.552(R)|   -0.470(R)|CLK_BUFGP         |   0.000|
+MOSI        |    1.772(R)|   -0.111(R)|CLK_BUFGP         |   0.000|
+SS          |    4.965(R)|    0.950(R)|CLK_BUFGP         |   0.000|
+SSCLK       |    0.186(R)|    1.069(R)|CLK_BUFGP         |   0.000|
+Sw<0>       |    9.928(R)|   -1.628(R)|CLK_BUFGP         |   0.000|
+Sw<1>       |    9.725(R)|   -1.576(R)|CLK_BUFGP         |   0.000|
+Sw<2>       |    9.161(R)|   -1.570(R)|CLK_BUFGP         |   0.000|
+Sw<3>       |   10.606(R)|   -0.776(R)|CLK_BUFGP         |   0.000|
+Sw<4>       |    9.721(R)|   -1.561(R)|CLK_BUFGP         |   0.000|
+Sw<5>       |   10.251(R)|   -1.272(R)|CLK_BUFGP         |   0.000|
+Sw<6>       |   10.562(R)|   -2.296(R)|CLK_BUFGP         |   0.000|
+Sw<7>       |   10.500(R)|   -1.920(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -70,19 +70,18 @@ Clock CLK to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-CS          |    8.022(R)|CLK_BUFGP         |   0.000|
-En1         |    8.385(R)|CLK_BUFGP         |   0.000|
-En2         |    8.452(R)|CLK_BUFGP         |   0.000|
-Led<0>      |    9.197(R)|CLK_BUFGP         |   0.000|
-Led<1>      |    9.160(R)|CLK_BUFGP         |   0.000|
-Led<2>      |    8.503(R)|CLK_BUFGP         |   0.000|
-Led<3>      |    8.698(R)|CLK_BUFGP         |   0.000|
-MISO        |    7.211(R)|CLK_BUFGP         |   0.000|
-MSclk       |    7.759(R)|CLK_BUFGP         |   0.000|
-PWML1       |    8.730(R)|CLK_BUFGP         |   0.000|
-PWML2       |    8.210(R)|CLK_BUFGP         |   0.000|
-PWMR1       |    8.503(R)|CLK_BUFGP         |   0.000|
-PWMR2       |    7.877(R)|CLK_BUFGP         |   0.000|
+CS          |    8.295(R)|CLK_BUFGP         |   0.000|
+En1         |    8.395(R)|CLK_BUFGP         |   0.000|
+En2         |    8.461(R)|CLK_BUFGP         |   0.000|
+Led<0>      |    9.123(R)|CLK_BUFGP         |   0.000|
+Led<1>      |    9.137(R)|CLK_BUFGP         |   0.000|
+Led<2>      |    9.330(R)|CLK_BUFGP         |   0.000|
+MISO        |    8.730(R)|CLK_BUFGP         |   0.000|
+MSclk       |    7.495(R)|CLK_BUFGP         |   0.000|
+PWML1       |    8.437(R)|CLK_BUFGP         |   0.000|
+PWML2       |    8.175(R)|CLK_BUFGP         |   0.000|
+PWMR1       |    8.657(R)|CLK_BUFGP         |   0.000|
+PWMR2       |    7.887(R)|CLK_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -90,26 +89,26 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    8.270|         |         |         |
+CLK            |    8.234|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-Hallindex1     |Led<7>         |    8.892|
-Hallindex2     |Led<5>         |    6.603|
+Hallindex1     |Led<7>         |    8.890|
+Hallindex2     |Led<5>         |    5.891|
 ---------------+---------------+---------+
 
 
-Analysis completed Wed May 17 10:16:05 2017 
+Analysis completed Fri May 19 12:44:36 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 376 MB
+Peak Memory Usage: 375 MB
 
 
 

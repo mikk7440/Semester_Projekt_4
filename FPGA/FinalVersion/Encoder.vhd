@@ -25,7 +25,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity Encoder is
 generic(
-	Bit_length 	: integer := 14
+	Bit_length 	: integer := 12
 	);
 
 port (

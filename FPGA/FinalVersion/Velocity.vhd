@@ -10,7 +10,7 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity Velocity is
 port (
 		CLK 			: IN STD_LOGIC;
-		EncouderIN 	: IN std_logic_vector(13 downto 0);
+		EncouderIN 	: IN std_logic_vector(11 downto 0);
 		Velocity		: OUT std_logic_vector(11 downto 0)
 		
 		
@@ -20,7 +20,7 @@ end Velocity;
 architecture Behavioral of Velocity is
 signal VelocityCLKOut: STD_LOGIC;
 signal VelocitySignal: STD_LOGIC_VECTOR(11 downto 0);
-signal TempEncouderOut: STD_LOGIC_VECTOR(13 downto 0);
+signal TempEncouderOut: STD_LOGIC_VECTOR(11 downto 0);
 signal NumberToAvg : STD_LOGIC_VECTOR(8 downto 0);
 signal RunAvg			: STD_LOGIC;
 signal Average			: std_logic_vector(8 downto 0);
@@ -106,7 +106,7 @@ UM42 : RunningAverage PORT MAP(
 --begin
 
 process(CLK)
-variable EncoderOld 	: STD_LOGIC_VECTOR(13 downto 0);
+variable EncoderOld 	: STD_LOGIC_VECTOR(11 downto 0);
 variable VCounter		: std_logic_vector(11 downto 0) := (others => '0'); 
 begin
 	if rising_edge(CLK) then

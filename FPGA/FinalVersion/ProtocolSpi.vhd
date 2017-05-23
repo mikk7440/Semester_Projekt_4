@@ -9,15 +9,15 @@ generic (
 );
 Port(
 		CLK			: in STD_LOGIC;
-		Encoder1 	: in STD_LOGIC_VECTOR(13 downto 0);
-		Encoder2 	: in STD_LOGIC_VECTOR(13 downto 0);
+		Encoder1 	: in STD_LOGIC_VECTOR(11 downto 0);
+		Encoder2 	: in STD_LOGIC_VECTOR(11 downto 0);
 		Velocity1	: in STD_LOGIC_VECTOR(11 downto 0);
 		Velocity2	: in STD_LOGIC_VECTOR(11 downto 0);
 		Current1		: in	STD_LOGIC_VECTOR(11 downto 0);
 		Current2		: in STD_LOGIC_VECTOR(11 downto 0);
 		Motor1Duty 	: out STD_LOGIC_VECTOR(7 downto 0);
 		Motor2Duty 	: out STD_LOGIC_VECTOR(7 downto 0);
-		protocolbits: out STD_LOGIC_VECTOR(3 downto 0);
+		protocolbits: out STD_LOGIC_VECTOR(2 downto 0);
 		SSCLK 			: IN STD_LOGIC;
 		MOSI 			: IN STD_LOGIC;
 		SS	  			: IN STD_LOGIC;
@@ -40,14 +40,14 @@ component SPI
 		TX	  : IN STD_LOGIC_VECTOR(N-1 downto 0);
 		RX	  : OUT STD_LOGIC_VECTOR(N-1 downto 0);
 		MISO : OUT STD_LOGIC;
-		ProtocolBit : OUT STD_LOGIC_VECTOR(3 downto 0);
+		ProtocolBit : OUT STD_LOGIC_VECTOR(2 downto 0);
 		busyFlag : out STD_LOGIC
 		);
 end component;
 signal DataTX : STD_LOGIC_VECTOR(N-1 downto 0);
 signal DataRX : STD_LOGIC_VECTOR(N-1 downto 0):= (others =>'0');
 signal TempReset : STD_LOGIC;
-SIGNAL ProtocolBit : STD_LOGIC_VECTOR(3 DOWNTO 0);
+SIGNAL ProtocolBit : STD_LOGIC_VECTOR(2 DOWNTO 0);
 signal busyFlag : STD_LOGIC;
 begin
 U11 : SPI PORT MAP(CLK=>CLK,
@@ -68,60 +68,60 @@ protocolbits <= ProtocolBit;
 
 Protokol : process(CLk)
 variable DummyToggle : STD_LOGIC :='0';
-variable TempRX 	 : STD_LOGIC_VECTOR(3 downto 0);
+variable TempRX 	 : STD_LOGIC_VECTOR(2 downto 0);
 begin
 
 	if rising_edge(CLK) then
 		TempReset <= '0';
 															--TempRX := DataRX(N-1 downto N-4); ------------(others => '0');
 -----------Pulse Protocol bits--------------------	
-		if "1111" /= ProtocolBit or "0000" /= ProtocolBit then 
+		if "111" /= ProtocolBit or "000" /= ProtocolBit then 
 			TempRX := ProtocolBit;
 		end if;
 ---------------------------------------------------
 		
 		case	TempRX is
-			when "1111" => 
+			when "111" => 
 								TempReset <= '1'; -------Test
 								if DummyToggle = '0' then
 									TempReset <= '1';
-									TempRX := "0000";
+									TempRX := "000";
 									DummyToggle := '1';
 								end if;
 
 
-			when "0001" => 
+			when "001" => 
 								--if busyFlag = '0' then
 									Motor1Duty <= DataRX(7 downto 0);
 									DataTX <= (others => '0');--"00" & Current1; --Encoder1; --MODTAG STRØM
-									TempRX := "0000";
+									TempRX := "000";
 								--end if;
-			when "0010" =>DataTX <= "0000" & Current1;
-							TempRX := "0000";
-			when "0011" =>DataTX <= "0000" & Velocity1;
-								TempRX := "0000";
-			when "0100" =>DataTX <= "00" & Encoder1;
-							TempRX := "0000";
+--			when "0010" =>DataTX <= "0000" & Current1;
+--							TempRX := "0000";
+--			when "0011" =>DataTX <= "0000" & Velocity1;
+--								TempRX := "0000";
+			when "010" =>DataTX <= "0000" & Encoder1;
+							TempRX := "000";
 
 
-			when "0101" => 
+			when "011" => 
 								--if busyFlag = '0' then
 									Motor2Duty <= DataRX(7 downto 0);
 									DataTX <= (others => '0');--"10" & Encoder2;   ---mODTAG STRØM
-									TempRX := "0000";
+									TempRX := "000";
 								--end if;
-			when "0110" =>DataTX <= "1000" & Current2;
-								TempRX := "0000";
-			when "0111" =>DataTX <= "1000" & Velocity2;
-							TempRX := "0000";
-			when "1000" =>DataTX <= "10" & Encoder2;
-							TempRX := "0000";
+--			when "0110" =>DataTX <= "1000" & Current2;
+--								TempRX := "0000";
+--			when "0111" =>DataTX <= "1000" & Velocity2;
+--							TempRX := "0000";
+			when "100" =>DataTX <= "0001" & Encoder2;
+							TempRX := "000";
 			
 			
 	--		when "1101" => DataTX <= "000000000000" & ProtocolBit;-- test
 	
 			when others => DataTX <= (others =>'0');
-								TempRX := "0000";
+								TempRX := "000";
 		end case;
 --		Led(7 downto 4) <= TempRX;
 --		Led(3 downto 0) <= DataRX(N-1 downto N-4);

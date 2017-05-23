@@ -26,7 +26,7 @@ port(
  
 ------------Encoder----------------
 		EncoderIn: 	IN STD_LOGIC_VECTOR(1 downto 0);
-		EncoderOut:	OUT STD_LOGIC_VECTOR(13 downto 0);
+		EncoderOut:	OUT STD_LOGIC_VECTOR(11 downto 0);
 		VelocityOut  : OUT STD_LOGIC_VECTOR(11 downto 0);
 --------------End------------------
 
@@ -45,7 +45,7 @@ signal ResetPWM		: STD_LOGIC;
 signal ResetEncoder	: STD_LOGIC;
 signal DutycycleToPWM: STD_LOGIC_VECTOR(7 downto 0);
 signal VelocitySignal: STD_LOGIC_VECTOR(11 downto 0);
-signal TempEncouderOut : STD_LOGIC_VECTOR(13 downto 0);
+signal TempEncouderOut : STD_LOGIC_VECTOR(11 downto 0);
 
 constant Zero8Bit : STD_LOGIC_VECTOR(7 downto 0) := (others =>'0');
 
@@ -78,7 +78,7 @@ port (
 		Reset : in STD_LOGIC;
 		CLK : in STD_LOGIC;
 		HallSensor : in STD_LOGIC_VECTOR (1 downto 0); --lilla (0) and blaa (1)
-		EncoderOut : out STD_LOGIC_VECTOR(13 downto 0)
+		EncoderOut : out STD_LOGIC_VECTOR(11 downto 0)
 		);
 end component;
 
@@ -87,7 +87,7 @@ end component;
 component Velocity
 port (
 		CLK 			: IN STD_LOGIC;
-		EncouderIN 	: IN std_logic_vector(13 downto 0);
+		EncouderIN 	: IN std_logic_vector(11 downto 0);
 		Velocity		: OUT std_logic_vector(11 downto 0)
 		
 		

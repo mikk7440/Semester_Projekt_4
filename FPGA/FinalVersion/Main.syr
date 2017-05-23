@@ -4,14 +4,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.04 secs
  
 --> 
@@ -122,8 +122,7 @@ Architecture behavioral of Entity prescalertransistor is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd" in Library work.
 Architecture behavioral of Entity pwm is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd" in Library work.
-Entity <encoder> compiled.
-Entity <encoder> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity encoder is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd" in Library work.
 Architecture behavioral of Entity velocity is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd" in Library work.
@@ -137,7 +136,8 @@ Architecture behavioral of Entity currentsensor is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd" in Library work.
 Architecture behavioral of Entity seg7 is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd" in Library work.
-Architecture behavioral of Entity main is up to date.
+Entity <main> compiled.
+Entity <main> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -162,7 +162,7 @@ Analyzing hierarchy for entity <PWM> in library <work> (architecture <behavioral
 	N = 8
 
 Analyzing hierarchy for entity <Encoder> in library <work> (architecture <behavioral>) with generics.
-	Bit_length = 14
+	Bit_length = 12
 
 Analyzing hierarchy for entity <Velocity> in library <work> (architecture <behavioral>).
 
@@ -206,7 +206,7 @@ Analyzing Entity <PrescalerPWM> in library <work> (Architecture <behavioral>).
 Entity <PrescalerPWM> analyzed. Unit <PrescalerPWM> generated.
 
 Analyzing generic Entity <Encoder> in library <work> (Architecture <behavioral>).
-	Bit_length = 14
+	Bit_length = 12
 Entity <Encoder> analyzed. Unit <Encoder> generated.
 
 Analyzing Entity <Encoder_filter> in library <work> (Architecture <behavioral>).
@@ -276,7 +276,7 @@ Synthesizing Unit <SPI>.
     Related source file is "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd".
     Found 1-bit register for signal <busyFlag>.
     Found 16-bit register for signal <RX>.
-    Found 4-bit register for signal <ProtocolBit>.
+    Found 3-bit register for signal <ProtocolBit>.
     Found 1-bit tristate buffer for signal <MISO>.
     Found 1-bit 4-to-1 multiplexer for signal <busyFlag$mux0000>.
     Found 5-bit up counter for signal <Counter>.
@@ -288,7 +288,7 @@ Synthesizing Unit <SPI>.
     Found 2-bit register for signal <SSShiftReg>.
     Summary:
 	inferred   1 Counter(s).
-	inferred  43 D-type flip-flop(s).
+	inferred  42 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Multiplexer(s).
 	inferred   1 Tristate(s).
@@ -379,6 +379,10 @@ Unit <OneKHz> synthesized.
 
 Synthesizing Unit <ProtocolSpi>.
     Related source file is "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd".
+WARNING:Xst:647 - Input <Current1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Current2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Velocity1> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Velocity2> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:646 - Signal <busyFlag> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <DataRX<15:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 8-bit register for signal <Motor1Duty>.
@@ -548,13 +552,13 @@ WARNING:Xst:653 - Signal <RunAvg> is used but never assigned. This sourceless si
 WARNING:Xst:653 - Signal <NumberToAvg> is used but never assigned. This sourceless signal will be automatically connected to value 000000000.
 WARNING:Xst:646 - Signal <Average> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
     Found 12-bit register for signal <Velocity>.
-    Found 14-bit register for signal <EncoderOld>.
+    Found 12-bit register for signal <EncoderOld>.
     Found 12-bit up counter for signal <VCounter>.
     Found 12-bit adder for signal <VCounter$addsub0000> created at line 119.
-    Found 14-bit comparator not equal for signal <VCounter$cmp_ne0000> created at line 113.
+    Found 12-bit comparator not equal for signal <VCounter$cmp_ne0000> created at line 113.
     Summary:
 	inferred   1 Counter(s).
-	inferred  26 D-type flip-flop(s).
+	inferred  24 D-type flip-flop(s).
 	inferred   1 Adder/Subtractor(s).
 	inferred   1 Comparator(s).
 Unit <Velocity> synthesized.
@@ -587,7 +591,7 @@ Synthesizing Unit <MotorController>.
     Found 1-bit register for signal <Start>.
     Found 1-bit register for signal <tempEnable>.
     Found 3-bit comparator greatequal for signal <TurnRAndL$cmp_ge0000> created at line 156.
-    Found 15-bit comparator less for signal <TurnRAndL$cmp_lt0000> created at line 157.
+    Found 13-bit comparator less for signal <TurnRAndL$cmp_lt0000> created at line 157.
     Found 3-bit comparator less for signal <TurnRAndL$cmp_lt0001> created at line 156.
     Summary:
 	inferred   1 Finite State Machine(s).
@@ -636,19 +640,20 @@ Macro Statistics
 # Registers                                            : 90
  1-bit register                                        : 49
  10-bit register                                       : 14
- 12-bit register                                       : 8
- 14-bit register                                       : 3
+ 12-bit register                                       : 10
+ 14-bit register                                       : 1
  16-bit register                                       : 2
  2-bit register                                        : 2
- 4-bit register                                        : 2
+ 3-bit register                                        : 1
+ 4-bit register                                        : 1
  5-bit register                                        : 1
  8-bit register                                        : 7
  9-bit register                                        : 2
 # Comparators                                          : 53
+ 12-bit comparator not equal                           : 2
+ 13-bit comparator less                                : 2
  14-bit comparator greatequal                          : 32
  14-bit comparator lessequal                           : 2
- 14-bit comparator not equal                           : 2
- 15-bit comparator less                                : 2
  16-bit comparator less                                : 5
  17-bit comparator less                                : 2
  3-bit comparator greatequal                           : 2
@@ -709,13 +714,9 @@ WARNING:Xst:1290 - Hierarchical block <UM42> is unconnected in block <UM4>.
    It will be removed from the design.
 WARNING:Xst:1426 - The value init of the FF/Latch FFd4 hinder the constant cleaning in the block FSM.
    You should achieve better results by setting this init to 0.
-WARNING:Xst:1710 - FF/Latch <DataTX_12> (without init value) has a constant value of 0 in block <U1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <DataTX_13> (without init value) has a constant value of 0 in block <U1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <DataTX_14> (without init value) has a constant value of 0 in block <U1>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <EncoderOld_12> (without init value) has a constant value of 0 in block <UM4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <EncoderOld_13> (without init value) has a constant value of 0 in block <UM4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <EncoderOld_12> (without init value) has a constant value of 0 in block <UM4>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <EncoderOld_13> (without init value) has a constant value of 0 in block <UM4>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DataTX_15> (without init value) has a constant value of 0 in block <U1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg7Number_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg7Number_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <RX_8> of sequential type is unconnected in block <U11>.
@@ -752,13 +753,13 @@ Macro Statistics
  3-bit up counter                                      : 1
  5-bit up counter                                      : 1
  7-bit down counter                                    : 2
-# Registers                                            : 450
- Flip-Flops                                            : 450
+# Registers                                            : 445
+ Flip-Flops                                            : 445
 # Comparators                                          : 53
+ 12-bit comparator not equal                           : 2
+ 13-bit comparator less                                : 2
  14-bit comparator greatequal                          : 32
  14-bit comparator lessequal                           : 2
- 14-bit comparator not equal                           : 2
- 15-bit comparator less                                : 2
  16-bit comparator less                                : 5
  17-bit comparator less                                : 2
  3-bit comparator greatequal                           : 2
@@ -788,7 +789,11 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Avg4_9> has a const
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Avg5_9> has a constant value of 0 in block <RunningAverage>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Avg6_9> has a constant value of 0 in block <RunningAverage>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <Avg7_9> has a constant value of 0 in block <RunningAverage>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <DataTX_14> (without init value) has a constant value of 0 in block <ProtocolSpi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <DataTX_13> (without init value) has a constant value of 0 in block <ProtocolSpi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataTX_14> (without init value) has a constant value of 0 in block <ProtocolSpi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <DataTX_15> (without init value) has a constant value of 0 in block <ProtocolSpi>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <seg7Number_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg7Number_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <Avg1_0> in Unit <RunningAverage> is equivalent to the following 8 FFs/Latches, which will be removed : <Avg1_1> <Avg1_2> <Avg1_3> <Avg1_4> <Avg1_5> <Avg1_6> <Avg1_7> <Avg1_8> 
 INFO:Xst:2261 - The FF/Latch <Avg2_0> in Unit <RunningAverage> is equivalent to the following 8 FFs/Latches, which will be removed : <Avg2_1> <Avg2_2> <Avg2_3> <Avg2_4> <Avg2_5> <Avg2_6> <Avg2_7> <Avg2_8> 
 INFO:Xst:2261 - The FF/Latch <Avg3_0> in Unit <RunningAverage> is equivalent to the following 8 FFs/Latches, which will be removed : <Avg3_1> <Avg3_2> <Avg3_3> <Avg3_4> <Avg3_5> <Avg3_6> <Avg3_7> <Avg3_8> 
@@ -836,14 +841,6 @@ Optimizing unit <Encoder> ...
 Optimizing unit <Velocity> ...
 
 Optimizing unit <MotorController> ...
-WARNING:Xst:1710 - FF/Latch <seg7Number_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seg7Number_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U1/DataTX_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U1/DataTX_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U3/UM4/EncoderOld_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U3/UM4/EncoderOld_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U2/UM4/EncoderOld_12> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <U2/UM4/EncoderOld_13> (without init value) has a constant value of 0 in block <Main>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -855,8 +852,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 447
- Flip-Flops                                            : 447
+# Registers                                            : 446
+ Flip-Flops                                            : 446
 
 =========================================================================
 
@@ -885,30 +882,30 @@ Design Statistics
 # IOs                              : 49
 
 Cell Usage :
-# BELS                             : 3080
+# BELS                             : 3018
 #      GND                         : 1
-#      INV                         : 62
-#      LUT1                        : 181
-#      LUT2                        : 73
+#      INV                         : 61
+#      LUT1                        : 179
+#      LUT2                        : 69
 #      LUT2_D                      : 1
-#      LUT2_L                      : 16
-#      LUT3                        : 850
-#      LUT3_D                      : 8
+#      LUT2_L                      : 15
+#      LUT3                        : 831
+#      LUT3_D                      : 6
 #      LUT3_L                      : 6
-#      LUT4                        : 525
+#      LUT4                        : 497
 #      LUT4_D                      : 15
-#      LUT4_L                      : 30
-#      MUXCY                       : 727
-#      MUXF5                       : 53
+#      LUT4_L                      : 36
+#      MUXCY                       : 719
+#      MUXF5                       : 50
 #      VCC                         : 1
 #      XORCY                       : 531
-# FlipFlops/Latches                : 447
-#      FD                          : 71
-#      FDE                         : 152
+# FlipFlops/Latches                : 446
+#      FD                          : 83
+#      FDE                         : 151
 #      FDR                         : 93
 #      FDRE                        : 89
 #      FDRSE                       : 14
-#      FDS                         : 28
+#      FDS                         : 16
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 48
@@ -922,9 +919,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                      951  out of   4656    20%  
- Number of Slice Flip Flops:            447  out of   9312     4%  
- Number of 4 input LUTs:               1767  out of   9312    18%  
+ Number of Slices:                      919  out of   4656    19%  
+ Number of Slice Flip Flops:            446  out of   9312     4%  
+ Number of 4 input LUTs:               1716  out of   9312    18%  
  Number of IOs:                          49
  Number of bonded IOBs:                  49  out of    232    21%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -950,7 +947,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-CLK                                | BUFGP                  | 434   |
+CLK                                | BUFGP                  | 433   |
 U5/U1/oneKHz                       | NONE(U5/S_1)           | 13    |
 -----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -963,9 +960,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 8.427ns (Maximum Frequency: 118.666MHz)
-   Minimum input arrival time before clock: 10.178ns
-   Maximum output required time after clock: 5.129ns
+   Minimum period: 8.368ns (Maximum Frequency: 119.503MHz)
+   Minimum input arrival time before clock: 10.103ns
+   Maximum output required time after clock: 5.124ns
    Maximum combinational path delay: 5.423ns
 
 Timing Detail:
@@ -974,10 +971,10 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 8.427ns (frequency: 118.666MHz)
-  Total number of paths / destination ports: 18094 / 899
+  Clock period: 8.368ns (frequency: 119.503MHz)
+  Total number of paths / destination ports: 17858 / 885
 -------------------------------------------------------------------------
-Delay:               8.427ns (Levels of Logic = 11)
+Delay:               8.368ns (Levels of Logic = 10)
   Source:            U3/UM3/posision_1 (FF)
   Destination:       U3/UM4/Velocity_0 (FF)
   Source Clock:      CLK rising
@@ -994,15 +991,14 @@ Delay:               8.427ns (Levels of Logic = 11)
      MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2>)
      MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<3> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<3>)
      MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<4> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<4>)
-     MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5>)
-     MUXCY:CI->O          18   0.331   1.243  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<6> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<6>)
-     LUT2:I0->O            1   0.704   0.000  U3/UM4/Velocity_cmp_eq000016_SW2_F (N286)
-     MUXF5:I0->O           1   0.321   0.455  U3/UM4/Velocity_cmp_eq000016_SW2 (N217)
+     MUXCY:CI->O          18   0.331   1.243  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5>)
+     LUT2:I0->O            1   0.704   0.000  U3/UM4/Velocity_cmp_eq000016_SW2_F (N323)
+     MUXF5:I0->O           1   0.321   0.455  U3/UM4/Velocity_cmp_eq000016_SW2 (N249)
      LUT4:I2->O           12   0.704   0.961  U3/UM4/Velocity_cmp_eq0000138 (U3/UM4/Velocity_cmp_eq0000)
      FDRE:R                    0.911          U3/UM4/Velocity_0
     ----------------------------------------
-    Total                      8.427ns (5.025ns logic, 3.402ns route)
-                                       (59.6% logic, 40.4% route)
+    Total                      8.368ns (4.966ns logic, 3.402ns route)
+                                       (59.3% logic, 40.7% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U5/U1/oneKHz'
@@ -1029,9 +1025,9 @@ Delay:               4.048ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 1185 / 92
+  Total number of paths / destination ports: 1178 / 93
 -------------------------------------------------------------------------
-Offset:              10.178ns (Levels of Logic = 6)
+Offset:              10.103ns (Levels of Logic = 6)
   Source:            Sw<6> (PAD)
   Destination:       seg7Number_0 (FF)
   Destination Clock: CLK rising
@@ -1042,33 +1038,33 @@ Offset:              10.178ns (Levels of Logic = 6)
     ----------------------------------------  ------------
      IBUF:I->O            13   1.218   1.158  Sw_6_IBUF (Sw_6_IBUF)
      LUT2:I0->O            3   0.704   0.706  seg7Number_or000071 (seg7Number_or000042)
-     LUT4:I0->O            3   0.704   0.610  seg7Number_cmp_eq000211 (N27)
-     LUT4:I1->O           12   0.704   1.040  seg7Number_cmp_eq00041 (seg7Number_cmp_eq0004)
-     LUT4:I1->O            1   0.704   0.595  seg7Number_mux0000<7>19_SW0 (N336)
+     LUT4:I0->O            3   0.704   0.610  seg7Number_cmp_eq000311 (N15)
+     LUT4:I1->O           12   0.704   0.965  seg7Number_cmp_eq00041 (seg7Number_cmp_eq0004)
+     LUT4:I3->O            1   0.704   0.595  seg7Number_mux0000<7>19_SW0 (N373)
      LUT3:I0->O            1   0.704   0.420  seg7Number_mux0000<7>19 (seg7Number_mux0000<7>19)
      FDS:S                     0.911          seg7Number_7
     ----------------------------------------
-    Total                     10.178ns (5.649ns logic, 4.529ns route)
-                                       (55.5% logic, 44.5% route)
+    Total                     10.103ns (5.649ns logic, 4.454ns route)
+                                       (55.9% logic, 44.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
-  Total number of paths / destination ports: 14 / 13
+  Total number of paths / destination ports: 13 / 12
 -------------------------------------------------------------------------
-Offset:              5.129ns (Levels of Logic = 1)
-  Source:            U1/U11/ProtocolBit_2 (FF)
-  Destination:       Led<2> (PAD)
+Offset:              5.124ns (Levels of Logic = 1)
+  Source:            U1/U11/ProtocolBit_1 (FF)
+  Destination:       Led<1> (PAD)
   Source Clock:      CLK rising
 
-  Data Path: U1/U11/ProtocolBit_2 to Led<2>
+  Data Path: U1/U11/ProtocolBit_1 to Led<1>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             44   0.591   1.266  U1/U11/ProtocolBit_2 (U1/U11/ProtocolBit_2)
-     OBUF:I->O                 3.272          Led_2_OBUF (Led<2>)
+     FDE:C->Q             29   0.591   1.261  U1/U11/ProtocolBit_1 (U1/U11/ProtocolBit_1)
+     OBUF:I->O                 3.272          Led_1_OBUF (Led<1>)
     ----------------------------------------
-    Total                      5.129ns (3.863ns logic, 1.266ns route)
-                                       (75.3% logic, 24.7% route)
+    Total                      5.124ns (3.863ns logic, 1.261ns route)
+                                       (75.4% logic, 24.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U5/U1/oneKHz'
@@ -1110,15 +1106,15 @@ Delay:               5.423ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 14.88 secs
+Total REAL time to Xst completion: 15.00 secs
+Total CPU time to Xst completion: 14.15 secs
  
 --> 
 
 
-Total memory usage is 569912 kilobytes
+Total memory usage is 568916 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   73 (   0 filtered)
+Number of warnings :   69 (   0 filtered)
 Number of infos    :   11 (   0 filtered)
 

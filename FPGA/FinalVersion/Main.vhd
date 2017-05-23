@@ -54,7 +54,7 @@ component MotorController
  
 ------------Encoder----------------
 		EncoderIn: 	IN STD_LOGIC_VECTOR(1 downto 0);
-		EncoderOut:	OUT STD_LOGIC_VECTOR(13 downto 0);
+		EncoderOut:	OUT STD_LOGIC_VECTOR(11 downto 0);
 		VelocityOut  : OUT STD_LOGIC_VECTOR(11 downto 0);
 --------------End------------------
 
@@ -65,15 +65,15 @@ end component;
 component ProtocolSpi
 	Port(
 		CLK	: in STD_LOGIC;
-		Encoder1 : in STD_LOGIC_VECTOR(13 downto 0);
-		Encoder2 : in STD_LOGIC_VECTOR(13 downto 0);
+		Encoder1 : in STD_LOGIC_VECTOR(11 downto 0);
+		Encoder2 : in STD_LOGIC_VECTOR(11 downto 0);
 		Velocity1	: in STD_LOGIC_VECTOR(11 downto 0);
 		Velocity2	: in STD_LOGIC_VECTOR(11 downto 0);
 		Motor1Duty : out STD_LOGIC_VECTOR(7 downto 0);
 		Motor2Duty : out STD_LOGIC_VECTOR(7 downto 0);	
 		Current1 	: in STD_LOGIC_VECTOR(11 downto 0);
 		Current2		: in STD_LOGIC_VECTOR(11 downto 0);
-		protocolbits: out STD_LOGIC_VECTOR(3 downto 0);
+		protocolbits: out STD_LOGIC_VECTOR(2 downto 0);
 		SSCLK : IN STD_LOGIC;
 		MOSI : IN STD_LOGIC;
 		SS	  : IN STD_LOGIC;
@@ -109,8 +109,8 @@ component CurrentSensor
 end component;
 
 signal BindingReset : STD_LOGIC;
-signal Test_Encoder1: STD_LOGIC_VECTOR(13 downto 0);
-signal Test_Encoder2: STD_LOGIC_VECTOR(13 downto 0);
+signal Test_Encoder1: STD_LOGIC_VECTOR(11 downto 0);
+signal Test_Encoder2: STD_LOGIC_VECTOR(11 downto 0);
 signal Test_Duty1 	: STD_LOGIC_VECTOR(7 downto 0);
 signal Test_Duty2 	: STD_LOGIC_VECTOR(7 downto 0);
 signal Velocity1		: STD_LOGIC_VECTOR(11 downto 0);
@@ -127,7 +127,7 @@ constant LimitM22		: STD_LOGIC_VECTOR(13 downto 0) :="00011011101111";
 
 
 
-signal protocolBits : STD_LOGIC_VECTOR(3 downto 0);
+signal protocolBits : STD_LOGIC_VECTOR(2 downto 0);
 
 
 signal MaulalDuty		: STD_LOGIC_VECTOR(7 downto 0);
@@ -210,8 +210,8 @@ process(CLK)
 begin
 	if rising_edge(CLK) then
 		case Sw is
-		when "00000001" => seg7Number <= Test_Encoder1;
-		when "00000010" => seg7Number <= Test_Encoder2;
+		when "00000001" => seg7Number <= "00" & Test_Encoder1;
+		when "00000010" => seg7Number <= "00" & Test_Encoder2;
 		when "00000100" => seg7Number <= "00" & Velocity1;
 		when "00001000" => seg7Number	<= "00" & Velocity2;
 		when "00010000" => seg7Number <= "00" & Current1;
@@ -223,7 +223,7 @@ begin
 	end if;
 end process;
 
-Led <= Hallindex1 &"0" & Hallindex2& "0"& protocolbits;
+Led <= Hallindex1 &"0" & Hallindex2& "00"& protocolbits;
 end Behavioral;
 
 

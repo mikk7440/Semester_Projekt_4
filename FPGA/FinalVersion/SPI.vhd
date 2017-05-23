@@ -18,7 +18,7 @@ port(
 		TX	  : IN STD_LOGIC_VECTOR(N-1 downto 0);
 		RX	  : OUT STD_LOGIC_VECTOR(N-1 downto 0);
 		MISO : OUT STD_LOGIC;
-		ProtocolBit : OUT STD_LOGIC_VECTOR(3 downto 0);
+		ProtocolBit : OUT STD_LOGIC_VECTOR(2 downto 0);
 		busyFlag	: out STD_LOGIC
 		
 );
@@ -71,9 +71,9 @@ begin
 			end if;
 		 --Getting protocol bit
 			if SCLKShiftReg = "00" then
-				if Counter = 4 then
-					ProtocolBit <= DataReg(3 downto 0);
-					DataReg(15 downto 4) <= TX(11 downto 0);
+				if Counter = 3 then
+					ProtocolBit <= DataReg(2 downto 0);
+					DataReg(15 downto 3) <= TX(12 downto 0);
 				end if;
 			end if;
 			--------Set to try state----- 
