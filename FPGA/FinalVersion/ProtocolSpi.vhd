@@ -93,7 +93,7 @@ begin
 			when "001" => 
 								--if busyFlag = '0' then
 									Motor1Duty <= DataRX(7 downto 0);
-									DataTX <= (others => '0');--"00" & Current1; --Encoder1; --MODTAG STRØM
+									DataTX <= "0000" & Encoder1;--(others => '0');--"00" & Current1; --Encoder1; --MODTAG STRØM
 									TempRX := "000";
 								--end if;
 --			when "0010" =>DataTX <= "0000" & Current1;
@@ -107,7 +107,7 @@ begin
 			when "011" => 
 								--if busyFlag = '0' then
 									Motor2Duty <= DataRX(7 downto 0);
-									DataTX <= (others => '0');--"10" & Encoder2;   ---mODTAG STRØM
+									DataTX <= "0000" & Encoder2;--(others => '0');--"10" & Encoder2;   ---mODTAG STRØM
 									TempRX := "000";
 								--end if;
 --			when "0110" =>DataTX <= "1000" & Current2;

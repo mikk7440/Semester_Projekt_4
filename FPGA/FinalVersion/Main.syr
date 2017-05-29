@@ -4,15 +4,15 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
  
 --> 
 Reading design: Main.prj
@@ -128,7 +128,8 @@ Architecture behavioral of Entity velocity is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd" in Library work.
 Architecture behavioral of Entity spi is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd" in Library work.
-Architecture behavioral of Entity protocolspi is up to date.
+Entity <protocolspi> compiled.
+Entity <protocolspi> (Architecture <behavioral>) compiled.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd" in Library work.
 Architecture behavioral of Entity motorcontroller is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/CurrentSensor.vhd" in Library work.
@@ -136,8 +137,7 @@ Architecture behavioral of Entity currentsensor is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd" in Library work.
 Architecture behavioral of Entity seg7 is up to date.
 Compiling vhdl file "/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd" in Library work.
-Entity <main> compiled.
-Entity <main> (Architecture <behavioral>) compiled.
+Architecture behavioral of Entity main is up to date.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
@@ -882,30 +882,30 @@ Design Statistics
 # IOs                              : 49
 
 Cell Usage :
-# BELS                             : 3018
+# BELS                             : 3030
 #      GND                         : 1
-#      INV                         : 61
-#      LUT1                        : 179
-#      LUT2                        : 69
+#      INV                         : 60
+#      LUT1                        : 180
+#      LUT2                        : 68
 #      LUT2_D                      : 1
-#      LUT2_L                      : 15
+#      LUT2_L                      : 16
 #      LUT3                        : 831
-#      LUT3_D                      : 6
-#      LUT3_L                      : 6
-#      LUT4                        : 497
-#      LUT4_D                      : 15
-#      LUT4_L                      : 36
+#      LUT3_D                      : 7
+#      LUT3_L                      : 5
+#      LUT4                        : 509
+#      LUT4_D                      : 13
+#      LUT4_L                      : 38
 #      MUXCY                       : 719
 #      MUXF5                       : 50
 #      VCC                         : 1
 #      XORCY                       : 531
 # FlipFlops/Latches                : 446
-#      FD                          : 83
+#      FD                          : 71
 #      FDE                         : 151
 #      FDR                         : 93
 #      FDRE                        : 89
 #      FDRSE                       : 14
-#      FDS                         : 16
+#      FDS                         : 28
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 48
@@ -919,9 +919,9 @@ Device utilization summary:
 
 Selected Device : 3s500efg320-4 
 
- Number of Slices:                      919  out of   4656    19%  
+ Number of Slices:                      926  out of   4656    19%  
  Number of Slice Flip Flops:            446  out of   9312     4%  
- Number of 4 input LUTs:               1716  out of   9312    18%  
+ Number of 4 input LUTs:               1728  out of   9312    18%  
  Number of IOs:                          49
  Number of bonded IOBs:                  49  out of    232    21%  
  Number of GCLKs:                         1  out of     24     4%  
@@ -960,9 +960,9 @@ Timing Summary:
 ---------------
 Speed Grade: -4
 
-   Minimum period: 8.368ns (Maximum Frequency: 119.503MHz)
-   Minimum input arrival time before clock: 10.103ns
-   Maximum output required time after clock: 5.124ns
+   Minimum period: 8.424ns (Maximum Frequency: 118.708MHz)
+   Minimum input arrival time before clock: 9.963ns
+   Maximum output required time after clock: 5.128ns
    Maximum combinational path delay: 5.423ns
 
 Timing Detail:
@@ -971,34 +971,32 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
-  Clock period: 8.368ns (frequency: 119.503MHz)
-  Total number of paths / destination ports: 17858 / 885
+  Clock period: 8.424ns (frequency: 118.708MHz)
+  Total number of paths / destination ports: 17869 / 897
 -------------------------------------------------------------------------
-Delay:               8.368ns (Levels of Logic = 10)
-  Source:            U3/UM3/posision_1 (FF)
+Delay:               8.424ns (Levels of Logic = 8)
+  Source:            U3/UM3/posision_5 (FF)
   Destination:       U3/UM4/Velocity_0 (FF)
   Source Clock:      CLK rising
   Destination Clock: CLK rising
 
-  Data Path: U3/UM3/posision_1 to U3/UM4/Velocity_0
+  Data Path: U3/UM3/posision_5 to U3/UM4/Velocity_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               7   0.591   0.743  U3/UM3/posision_1 (U3/UM3/posision_1)
-     LUT4:I2->O            1   0.704   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_lut<0> (U3/UM4/Mcompar_VCounter_cmp_ne0000_lut<0>)
-     MUXCY:S->O            1   0.464   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<0> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<0>)
-     MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<1> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<1>)
-     MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2>)
+     FD:C->Q              10   0.591   0.917  U3/UM3/posision_5 (U3/UM3/posision_5)
+     LUT4:I2->O            1   0.704   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_lut<2> (U3/UM4/Mcompar_VCounter_cmp_ne0000_lut<2>)
+     MUXCY:S->O            1   0.464   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<2>)
      MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<3> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<3>)
      MUXCY:CI->O           1   0.059   0.000  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<4> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<4>)
      MUXCY:CI->O          18   0.331   1.243  U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5> (U3/UM4/Mcompar_VCounter_cmp_ne0000_cy<5>)
-     LUT2:I0->O            1   0.704   0.000  U3/UM4/Velocity_cmp_eq000016_SW2_F (N323)
-     MUXF5:I0->O           1   0.321   0.455  U3/UM4/Velocity_cmp_eq000016_SW2 (N249)
-     LUT4:I2->O           12   0.704   0.961  U3/UM4/Velocity_cmp_eq0000138 (U3/UM4/Velocity_cmp_eq0000)
-     FDRE:R                    0.911          U3/UM4/Velocity_0
+     LUT2:I0->O            1   0.704   0.000  U3/UM4/Velocity_cmp_eq000016_SW4_F (N277)
+     MUXF5:I0->O           1   0.321   0.455  U3/UM4/Velocity_cmp_eq000016_SW4 (N216)
+     LUT4:I2->O           12   0.704   0.961  U3/UM4/VCounter_or00001 (U3/UM4/VCounter_or0000)
+     FDRE:R                    0.911          U3/UM4/VCounter_0
     ----------------------------------------
-    Total                      8.368ns (4.966ns logic, 3.402ns route)
-                                       (59.3% logic, 40.7% route)
+    Total                      8.424ns (4.848ns logic, 3.576ns route)
+                                       (57.5% logic, 42.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'U5/U1/oneKHz'
@@ -1027,7 +1025,7 @@ Delay:               4.048ns (Levels of Logic = 2)
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
   Total number of paths / destination ports: 1178 / 93
 -------------------------------------------------------------------------
-Offset:              10.103ns (Levels of Logic = 6)
+Offset:              9.963ns (Levels of Logic = 6)
   Source:            Sw<6> (PAD)
   Destination:       seg7Number_0 (FF)
   Destination Clock: CLK rising
@@ -1038,20 +1036,20 @@ Offset:              10.103ns (Levels of Logic = 6)
     ----------------------------------------  ------------
      IBUF:I->O            13   1.218   1.158  Sw_6_IBUF (Sw_6_IBUF)
      LUT2:I0->O            3   0.704   0.706  seg7Number_or000071 (seg7Number_or000042)
-     LUT4:I0->O            3   0.704   0.610  seg7Number_cmp_eq000311 (N15)
+     LUT4:I0->O            3   0.704   0.610  seg7Number_cmp_eq000311 (N17)
      LUT4:I1->O           12   0.704   0.965  seg7Number_cmp_eq00041 (seg7Number_cmp_eq0004)
-     LUT4:I3->O            1   0.704   0.595  seg7Number_mux0000<7>19_SW0 (N373)
-     LUT3:I0->O            1   0.704   0.420  seg7Number_mux0000<7>19 (seg7Number_mux0000<7>19)
+     LUT4:I3->O            1   0.704   0.455  seg7Number_mux0000<7>19_SW0 (N441)
+     LUT3:I2->O            1   0.704   0.420  seg7Number_mux0000<7>19 (seg7Number_mux0000<7>19)
      FDS:S                     0.911          seg7Number_7
     ----------------------------------------
-    Total                     10.103ns (5.649ns logic, 4.454ns route)
-                                       (55.9% logic, 44.1% route)
+    Total                      9.963ns (5.649ns logic, 4.314ns route)
+                                       (56.7% logic, 43.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
   Total number of paths / destination ports: 13 / 12
 -------------------------------------------------------------------------
-Offset:              5.124ns (Levels of Logic = 1)
+Offset:              5.128ns (Levels of Logic = 1)
   Source:            U1/U11/ProtocolBit_1 (FF)
   Destination:       Led<1> (PAD)
   Source Clock:      CLK rising
@@ -1060,11 +1058,11 @@ Offset:              5.124ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q             29   0.591   1.261  U1/U11/ProtocolBit_1 (U1/U11/ProtocolBit_1)
+     FDE:C->Q             41   0.591   1.265  U1/U11/ProtocolBit_1 (U1/U11/ProtocolBit_1)
      OBUF:I->O                 3.272          Led_1_OBUF (Led<1>)
     ----------------------------------------
-    Total                      5.124ns (3.863ns logic, 1.261ns route)
-                                       (75.4% logic, 24.6% route)
+    Total                      5.128ns (3.863ns logic, 1.265ns route)
+                                       (75.3% logic, 24.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'U5/U1/oneKHz'
@@ -1106,13 +1104,13 @@ Delay:               5.423ns (Levels of Logic = 2)
 =========================================================================
 
 
-Total REAL time to Xst completion: 15.00 secs
-Total CPU time to Xst completion: 14.15 secs
+Total REAL time to Xst completion: 50.00 secs
+Total CPU time to Xst completion: 48.67 secs
  
 --> 
 
 
-Total memory usage is 568916 kilobytes
+Total memory usage is 569280 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   69 (   0 filtered)

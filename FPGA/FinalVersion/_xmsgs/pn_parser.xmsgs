@@ -8,52 +8,7 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/CurrentSensor.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Encoder_filter.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Main.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/MotorController.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/OneKHz.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PWM.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerPWM.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/PrescalerTransistor.vhd&quot; into library work</arg>
-</msg>
-
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/ProtocolSpi.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/RunningAverage.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/SPI.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/Velocity.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/VelocityCLK.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/kalman.vhd&quot; into library work</arg>
-</msg>
-
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;/home/anders/Dropbox/Robtek/4_semester/DIG/Projekt/seg7.vhd&quot; into library work</arg>
 </msg>
 
 </messages>

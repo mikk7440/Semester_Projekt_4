@@ -122,7 +122,7 @@ signal Seg7Motor1		: STD_LOGIC;
 signal Seg7Motor2		: STD_LOGIC;
 constant LimitM11		: STD_LOGIC_VECTOR(13 downto 0) :="11111111111111";
 constant LimitM12		: STD_LOGIC_VECTOR(13 downto 0) :="00000000000000";
-constant LimitM21		: STD_LOGIC_VECTOR(13 downto 0) :="00100010110001";
+constant LimitM21		: STD_LOGIC_VECTOR(13 downto 0) :="00100100101110";
 constant LimitM22		: STD_LOGIC_VECTOR(13 downto 0) :="00011011101111";
 
 
